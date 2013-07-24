@@ -1,179 +1,207 @@
-#NOP 
 #NOP  FAITH ROD CHARGE LEVELS:
-#NOP 
-#NOP PART 1: PRIESTS:
-#NOP 
-#NOP  Cyan segment indicates current charge level.
-#NOP  
-#NOP  Yellow segment means rod is so far up to imbued level.
+#NOP
+#NOP =============================================
+#NOP
+#NOP   INDEX:
+#NOP
+#NOP   Part 1: Variable declaration.
+#NOP
+#NOP   Part 2: Code for Priest characters.
+#NOP
+#NOP   Part 3: Code for non-Priest characters.
+#NOP
+#NOP =============================================
+#NOP
+#NOP
+#NOP =============================================
+#NOP
+#NOP PART 1: VARIABLES:
+#NOP
+#VARIABLE {Rod_Blank} {<abc><AAA>}
+#VARIABLE {Rod_Current} {<AFF><aff>}
+#VARIABLE {Rod_Imbued} {<FFA><ffa>}
+#VARIABLE {Rod_Impressed} {<AFA><afa>}
+#VARIABLE {Rod_Imprinted} {<ADF><adf>}
+#VARIABLE {Rod_Reset} {<088>}
+#VARIABLE {Rod_Ritual} {<088><adf>}
+#VARIABLE {Rod_Part} {<088><fdc>}
+#NOP
+#NOP PART 2: PRIESTS:
+#NOP
+#NOP  $Rod_Current indicates current charge level.
+#NOP
+#NOP  $Rod_Imbued means rod is so far up to imbued level.
 #NOP    The ritual can be used once, but it will be lost.
-#NOP  
-#NOP  Green segment means rod is so far up to impressed level.
+#NOP
+#NOP  $Rod_Impressed means rod is so far up to impressed level.
 #NOP    The ritual can be used many times, so long as the rod is not reconsecrated.
-#NOP  
-#NOP  Blue segments mean rod has been fully imprinted.
+#NOP
+#NOP  $Rod_Imprinted means rod has been fully imprinted.
 #NOP    The ritual can be used many times, and would survive reconsecration.
-#NOP 
+#NOP
 #NOP EMPTY
 #SUBSTITUTE
   {The %1 {is|are} empty and {is|are} linked to the %2.}
-  {  <fdc>%2\\%1<088> []\t[<abc><AAA>-------|-------<088>]}
+  {  %2 \\ $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank-------|-------$Rod_Reset]}
 #SUBSTITUTE
   {The %1 {is|are} empty and {is|are} not dependent on any other part of the %2.}
-  {  <fdc>%1<088> []\t[<abc><AAA>-------|-------<088>]}
+  { $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank-------|-------$Rod_Reset]}
 #NOP
 #NOP IMBUED 1
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a barely visible light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFF><aff>)<abc><AAA>------|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)$Rod_Blank------|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a barely visible light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFF><aff>)<abc><AAA>------|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)$Rod_Blank------|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 2
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a faint light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>)<AFF><aff>)<abc><AAA>-----|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)$Rod_Current)$Rod_Blank-----|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a faint light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>)<AFF><aff>)<abc><AAA>-----|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)$Rod_Current)$Rod_Blank-----|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 3
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dull light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>))<AFF><aff>)<abc><AAA>----|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))$Rod_Current)$Rod_Blank----|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dull light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>))<AFF><aff>)<abc><AAA>----|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))$Rod_Current)$Rod_Blank----|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 4
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a pale light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>)))<AFF><aff>)<abc><AAA>---|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))$Rod_Current)$Rod_Blank---|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a pale light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>)))<AFF><aff>)<abc><AAA>---|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))$Rod_Current)$Rod_Blank---|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 5
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dim light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>))))<AFF><aff>)<abc><AAA>--|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))$Rod_Current)$Rod_Blank--|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dim light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>))))<AFF><aff>)<abc><AAA>--|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))$Rod_Current)$Rod_Blank--|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 6
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a moderate light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>)))))<AFF><aff>)<abc><AAA>-|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))$Rod_Current)$Rod_Blank-|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a moderate light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>)))))<AFF><aff>)<abc><AAA>-|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))$Rod_Current)$Rod_Blank-|-------$Rod_Reset]}
+#NOP
 #NOP IMBUED 7
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a softly pulsing light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<FFA>))))))<AFF><aff>)<abc><AAA>|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))))$Rod_Current)$Rod_Blank|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a softly pulsing light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<FFA>))))))<AFF><aff>)<abc><AAA>|-------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))))$Rod_Current)$Rod_Blank|-------$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 1
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a softly pulsing light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|<AFF><aff>)<abc><AAA>------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|$Rod_Current)$Rod_Blank------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a softly pulsing light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|<AFF><aff>)<abc><AAA>------<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|$Rod_Current)$Rod_Blank------$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 2
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a brightly pulsing light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)<AFF><aff>)<abc><AAA>-----<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)$Rod_Current)$Rod_Blank-----$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a brightly pulsing light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)<AFF><aff>)<abc><AAA>-----<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)$Rod_Current)$Rod_Blank-----$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 3
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a bright light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))<AFF><aff>)<abc><AAA>----<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))$Rod_Current)$Rod_Blank----$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a bright light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))<AFF><aff>)<abc><AAA>----<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))$Rod_Current)$Rod_Blank----$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 4
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a strong light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)))<AFF><aff>)<abc><AAA>---<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)))$Rod_Current)$Rod_Blank---$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a strong light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)))<AFF><aff>)<abc><AAA>---<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)))$Rod_Current)$Rod_Blank---$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 5
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a brilliant light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))))<AFF><aff>)<abc><AAA>--<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))))$Rod_Current)$Rod_Blank--$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a brilliant light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))))<AFF><aff>)<abc><AAA>--<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))))$Rod_Current)$Rod_Blank--$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 6
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dazzling light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)))))<AFF><aff>)<abc><AAA>-<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)))))$Rod_Current)$Rod_Blank-$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dazzling light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|)))))<AFF><aff>)<abc><AAA>-<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|)))))$Rod_Current)$Rod_Blank-$Rod_Reset]}
+#NOP
 #NOP IMPRESSED 7
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a radiant light.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))))))<AFF><aff>)<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))))))$Rod_Current)$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a radiant light.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFA><afa>)))))))|))))))<AFF><aff>)<088>]}
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))|))))))$Rod_Current)$Rod_Reset]}
+#NOP
 #NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<ADF><adf>)))))))|)))))))<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<ADF><adf>)))))))|)))))))<088>]}
-#NOP 
-#NOP PART 2: NON-PRIESTS
-#NOP 
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
+#NOP
+#NOP
+#NOP =============================================
+#NOP
+#NOP PART 3: NON-PRIESTS
+#NOP
 #NOP  Cyan segment indicates rod is being imbued.
 #NOP    The ritual can be used once, but it will be lost.
-#NOP  
+#NOP
 #NOP  Yellow segment means rod has been imbued completely.
 #NOP    The ritual can be used many times, so long as the rod is not reconsecrated.
-#NOP  
+#NOP
 #NOP  Blue segments mean rod has been fully imprinted.
 #NOP    The ritual can be used many times, and would survive reconsecration.
-#NOP 
-#NOP 
+#NOP
+#NOP
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.$}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFF><aff>)))))))<abc><AAA>|-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFF><aff>)))))))<abc><AAA>|-------<088>]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
 
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.$}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<AFF><aff>)))))))|<afa><AFA>-------<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))|$Rod_Impressed-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<AFF><aff>)))))))|<afa><AFA>-------<088>]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))|$Rod_Impressed-------$Rod_Reset]}
 
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.$}
-  {  <fdc>%3\\%1<088> [<adf>%2<088>]\t[<ADF><adf>)))))))|)))))))<088>]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.$}
-  {  <fdc>%1<088> [<adf>%2<088>]\t[<ADF><adf>)))))))|)))))))<088>]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
 
 
 
