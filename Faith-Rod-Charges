@@ -30,13 +30,13 @@
 #NOP
 #NOP  $Rod_Current indicates current charge level.
 #NOP
-#NOP  $Rod_Imbued means rod is so far up to imbued level.
+#NOP  $Rod_Imbued indicates rod is so far up to imbued level.
 #NOP    The ritual can be used once, but it will be lost.
 #NOP
-#NOP  $Rod_Impressed means rod is so far up to impressed level.
+#NOP  $Rod_Impressed indicates rod is so far up to impressed level.
 #NOP    The ritual can be used many times, so long as the rod is not reconsecrated.
 #NOP
-#NOP  $Rod_Imprinted means rod has been fully imprinted.
+#NOP  $Rod_Imprinted indicates rod has been fully imprinted.
 #NOP    The ritual can be used many times, and would survive reconsecration.
 #NOP
 #NOP EMPTY
@@ -172,30 +172,29 @@
 #NOP
 #NOP PART 3: NON-PRIESTS
 #NOP
-#NOP  Cyan segment indicates rod is being imbued.
-#NOP    The ritual can be used once, but it will be lost.
+#NOP  $Rod_Current indicates rod is being imbued or impressed.
 #NOP
-#NOP  Yellow segment means rod has been imbued completely.
-#NOP    The ritual can be used many times, so long as the rod is not reconsecrated.
+#NOP  $Rod_Impressed means rod has been imbued completely, but is not yet imprinted.
 #NOP
-#NOP  Blue segments mean rod has been fully imprinted.
-#NOP    The ritual can be used many times, and would survive reconsecration.
+#NOP  $Rod_Imprinted mean rod has been fully imprinted.
 #NOP
-#NOP
+#NOP IMBUED
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.$}
   {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
   { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
-
+#NOP
+#NOP IMPRESSED
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))|$Rod_Impressed-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))|$Rod_Current-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))|$Rod_Impressed-------$Rod_Reset]}
-
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))|$Rod_Current-------$Rod_Reset]}
+#NOP
+#NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.$}
   {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
