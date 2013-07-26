@@ -1,0 +1,95 @@
+#NOP  ENCHANTMENT LEVELS:
+#NOP
+#NOP =============================================
+#NOP
+#NOP   INDEX:
+#NOP
+#NOP   Part 1: Variable declaration.
+#NOP
+#NOP   Part 2: Code for caster characters.
+#NOP     (non-caster characters can't see the charge
+#NOP     levels at all)
+#NOP
+#NOP =============================================
+#NOP
+#NOP
+#NOP =============================================
+#NOP
+#NOP PART 1: VARIABLES: <ABA> <ACA> <ACB> <ADB> <CDB> <CDA> <DDA> <DEA> <EEA> <088>
+#NOP
+#VARIABLE {Ench_Reset} {<088>}
+#VARIABLE {Ench_Blank} {<abc><AAA>}
+#VARIABLE {Ench_2} {<ABA><aba>}
+#VARIABLE {Ench_3} {<ACA><aca>}
+#VARIABLE {Ench_4} {<ACB><acb>}
+#VARIABLE {Ench_5} {<ADB><adb>}
+#VARIABLE {Ench_6} {<CDB><cdb>}
+#VARIABLE {Ench_7} {<CDA><cda>}
+#VARIABLE {Ench_8} {<DEA><dea>}
+#VARIABLE {Ench_9} {<EEA><eea>}
+#VARIABLE {Ench_Done} {<FFA><ffa>}
+#VARIABLE {Ench_Current} {<FBA><fba>}
+#NOP =============================================
+#NOP
+#NOP
+#NOP =============================================
+#NOP
+#NOP PART 2: CASTERS:
+#NOP
+#NOP  $Ench_Current indicates current enchantment level.
+#NOP
+#NOP  $Ench_n reflects the level to which the item has been enchanted (n).
+#NOP
+#NOP  $Ench_Done indicates item has been enchanted to the maximum possible level.
+#NOP
+#NOP 1
+#SUBSTITUTE
+  {It occasionally pulses with octarine light.}
+  {  Enchantment: [$Ench_Current-$Ench_Blank---------$Ench_Reset]}
+#NOP
+#NOP 2
+#SUBSTITUTE
+  {It emits a slight octarine glow.}
+  {  Enchantment: [$Ench_2-$Ench_Current-$Ench_Blank--------$Ench_Reset]}
+#NOP
+#NOP 3
+#SUBSTITUTE
+  {It softly pulses in dull octarine shades.}
+  {  Enchantment: [$Ench_3--$Ench_Current-$Ench_Blank-------$Ench_Reset]}
+#NOP
+#NOP 4
+#SUBSTITUTE
+  {It gives off a steady, but dull, octarine glow.}
+  {  Enchantment: [$Ench_4---$Ench_Current-$Ench_Blank------$Ench_Reset]}
+#NOP
+#NOP 5
+#SUBSTITUTE
+  {It gives off a steady octarine glow.}
+  {  Enchantment: [$Ench_5----$Ench_Current-$Ench_Blank-----$Ench_Reset]}
+#NOP
+#NOP 6
+#SUBSTITUTE
+  {It glows an intense octarine.}
+  {  Enchantment: [$Ench_6-----$Ench_Current-$Ench_Blank----$Ench_Reset]}
+#NOP
+#NOP 7
+#SUBSTITUTE
+  {It emits a bright octarine colour.}
+  {  Enchantment: [$Ench_7------$Ench_Current-$Ench_Blank---$Ench_Reset]}
+#NOP
+#NOP 8
+#SUBSTITUTE
+  {It brightly pulses octarine.}
+  {  Enchantment: [$Ench_8-------$Ench_Current-$Ench_Blank--$Ench_Reset]}
+#NOP
+#NOP 9
+#SUBSTITUTE
+  {It glows brilliant octarine shades.}
+  {  Enchantment: [$Ench_9--------$Ench_Current-$Ench_Blank-$Ench_Reset]}
+#NOP
+#NOP Done
+#SUBSTITUTE
+  {It radiates pure octarine brilliance.}
+  {  Enchantment: [$Ench_Done----------$Ench_Reset]}
+#NOP
+
