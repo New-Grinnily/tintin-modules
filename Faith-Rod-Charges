@@ -19,9 +19,9 @@
 #NOP
 #VARIABLE {Rod_Blank} {<abc><AAA>}
 #VARIABLE {Rod_Current} {<AFF><aff>}
-#VARIABLE {Rod_Imbued} {<FFA><ffa>}
-#VARIABLE {Rod_Impressed} {<AFA><afa>}
-#VARIABLE {Rod_Imprinted} {<ADF><adf>}
+#VARIABLE {Rod_Imbued} {<FFA>}
+#VARIABLE {Rod_Impressed} {<AFA>}
+#VARIABLE {Rod_Imprinted} {<ADF>}
 #VARIABLE {Rod_Reset} {<088>}
 #VARIABLE {Rod_Ritual} {<088><adf>}
 #VARIABLE {Rod_Part} {<088><fdc>}
@@ -42,130 +42,130 @@
 #NOP EMPTY
 #SUBSTITUTE
   {The %1 {is|are} empty and {is|are} linked to the %2.}
-  {  %2 \\ $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank-------|-------$Rod_Reset]}
+  {  %2 \\ $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank       |       $Rod_Reset]}
 #SUBSTITUTE
   {The %1 {is|are} empty and {is|are} not dependent on any other part of the %2.}
-  { $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank-------|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[]\t[$Rod_Blank       |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 1
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a barely visible light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)$Rod_Blank------|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Current $Rod_Blank      |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a barely visible light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)$Rod_Blank------|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Current $Rod_Blank      |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 2
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a faint light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)$Rod_Current)$Rod_Blank-----|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued $Rod_Current $Rod_Blank     |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a faint light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)$Rod_Current)$Rod_Blank-----|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued $Rod_Current $Rod_Blank     |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 3
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dull light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))$Rod_Current)$Rod_Blank----|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued  $Rod_Current $Rod_Blank    |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dull light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))$Rod_Current)$Rod_Blank----|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued  $Rod_Current $Rod_Blank    |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 4
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a pale light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))$Rod_Current)$Rod_Blank---|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued   $Rod_Current $Rod_Blank   |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a pale light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))$Rod_Current)$Rod_Blank---|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued   $Rod_Current $Rod_Blank   |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 5
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dim light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))$Rod_Current)$Rod_Blank--|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued    $Rod_Current $Rod_Blank  |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dim light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))$Rod_Current)$Rod_Blank--|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued    $Rod_Current $Rod_Blank  |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 6
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a moderate light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))$Rod_Current)$Rod_Blank-|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued     $Rod_Current $Rod_Blank |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a moderate light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))$Rod_Current)$Rod_Blank-|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued     $Rod_Current $Rod_Blank |       $Rod_Reset]}
 #NOP
 #NOP IMBUED 7
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a softly pulsing light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))))$Rod_Current)$Rod_Blank|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued      $Rod_Current $Rod_Blank|       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a softly pulsing light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued))))))$Rod_Current)$Rod_Blank|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued      $Rod_Current $Rod_Blank|       $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 1
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a softly pulsing light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Current)$Rod_Blank------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |$Rod_Current $Rod_Blank      $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a softly pulsing light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Current)$Rod_Blank------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |$Rod_Current $Rod_Blank      $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 2
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a brightly pulsing light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)$Rod_Current)$Rod_Blank-----$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       | $Rod_Current $Rod_Blank     $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a brightly pulsing light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)$Rod_Current)$Rod_Blank-----$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       | $Rod_Current $Rod_Blank     $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 3
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a bright light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))$Rod_Current)$Rod_Blank----$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |  $Rod_Current $Rod_Blank    $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a bright light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))$Rod_Current)$Rod_Blank----$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |  $Rod_Current $Rod_Blank    $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 4
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a strong light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)))$Rod_Current)$Rod_Blank---$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |   $Rod_Current $Rod_Blank   $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a strong light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)))$Rod_Current)$Rod_Blank---$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |   $Rod_Current $Rod_Blank   $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 5
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a brilliant light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))))$Rod_Current)$Rod_Blank--$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |    $Rod_Current $Rod_Blank  $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a brilliant light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))))$Rod_Current)$Rod_Blank--$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |    $Rod_Current $Rod_Blank  $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 6
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a dazzling light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)))))$Rod_Current)$Rod_Blank-$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |     $Rod_Current $Rod_Blank $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a dazzling light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed)))))$Rod_Current)$Rod_Blank-$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |     $Rod_Current $Rod_Blank $Rod_Reset]}
 #NOP
 #NOP IMPRESSED 7
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.  {It glows|They glow} with a radiant light.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))))))$Rod_Current)$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |      $Rod_Current $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.  {It glows|They glow} with a radiant light.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Impressed)))))))$Rod_Blank|$Rod_Impressed))))))$Rod_Current)$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Impressed       |      $Rod_Current $Rod_Reset]}
 #NOP
 #NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imprinted       |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imprinted       |       $Rod_Reset]}
 #NOP
 #NOP
 #NOP =============================================
@@ -181,26 +181,26 @@
 #NOP IMBUED
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Current       $Rod_Blank|       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Current)))))))$Rod_Blank|-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Current       $Rod_Blank|       $Rod_Reset]}
 #NOP
 #NOP IMPRESSED
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))$Rod_Blank|$Rod_Current-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued       |$Rod_Current       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))$Rod_Blank|$Rod_Current-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imbued       |$Rod_Current       $Rod_Reset]}
 #NOP
 #NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imprinted       |       $Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Blank$Rod_Imprinted       |       $Rod_Reset]}
 
 
 

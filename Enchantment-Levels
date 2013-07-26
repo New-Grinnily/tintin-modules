@@ -45,51 +45,51 @@
 #NOP 1
 #SUBSTITUTE
   {It occasionally pulses with octarine light.}
-  {  Enchantment: [$Ench_Current-$Ench_Blank---------$Ench_Reset]}
+  {  Enchantment: [$Ench_Current $Ench_Blank         $Ench_Reset]}
 #NOP
 #NOP 2
 #SUBSTITUTE
   {It emits a slight octarine glow.}
-  {  Enchantment: [$Ench_2-$Ench_Current-$Ench_Blank--------$Ench_Reset]}
+  {  Enchantment: [$Ench_2 $Ench_Current $Ench_Blank        $Ench_Reset]}
 #NOP
 #NOP 3
 #SUBSTITUTE
   {It softly pulses in dull octarine shades.}
-  {  Enchantment: [$Ench_3--$Ench_Current-$Ench_Blank-------$Ench_Reset]}
+  {  Enchantment: [$Ench_3  $Ench_Current $Ench_Blank       $Ench_Reset]}
 #NOP
 #NOP 4
 #SUBSTITUTE
   {It gives off a steady, but dull, octarine glow.}
-  {  Enchantment: [$Ench_4---$Ench_Current-$Ench_Blank------$Ench_Reset]}
+  {  Enchantment: [$Ench_4   $Ench_Current $Ench_Blank      $Ench_Reset]}
 #NOP
 #NOP 5
 #SUBSTITUTE
   {It gives off a steady octarine glow.}
-  {  Enchantment: [$Ench_5----$Ench_Current-$Ench_Blank-----$Ench_Reset]}
+  {  Enchantment: [$Ench_5    $Ench_Current $Ench_Blank     $Ench_Reset]}
 #NOP
 #NOP 6
 #SUBSTITUTE
   {It glows an intense octarine.}
-  {  Enchantment: [$Ench_6-----$Ench_Current-$Ench_Blank----$Ench_Reset]}
+  {  Enchantment: [$Ench_6     $Ench_Current $Ench_Blank    $Ench_Reset]}
 #NOP
 #NOP 7
 #SUBSTITUTE
   {It emits a bright octarine colour.}
-  {  Enchantment: [$Ench_7------$Ench_Current-$Ench_Blank---$Ench_Reset]}
+  {  Enchantment: [$Ench_7      $Ench_Current $Ench_Blank   $Ench_Reset]}
 #NOP
 #NOP 8
 #SUBSTITUTE
   {It brightly pulses octarine.}
-  {  Enchantment: [$Ench_8-------$Ench_Current-$Ench_Blank--$Ench_Reset]}
+  {  Enchantment: [$Ench_8       $Ench_Current $Ench_Blank  $Ench_Reset]}
 #NOP
 #NOP 9
 #SUBSTITUTE
   {It glows brilliant octarine shades.}
-  {  Enchantment: [$Ench_9--------$Ench_Current-$Ench_Blank-$Ench_Reset]}
+  {  Enchantment: [$Ench_9        $Ench_Current $Ench_Blank $Ench_Reset]}
 #NOP
 #NOP Done
 #SUBSTITUTE
   {It radiates pure octarine brilliance.}
-  {  Enchantment: [$Ench_Done----------$Ench_Reset]}
+  {  Enchantment: [$Ench_Done          $Ench_Reset]}
 #NOP
 
