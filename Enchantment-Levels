@@ -15,7 +15,7 @@
 #NOP
 #NOP =============================================
 #NOP
-#NOP PART 1: VARIABLES: <ABA> <ACA> <ACB> <ADB> <CDB> <CDA> <DDA> <DEA> <EEA> <088>
+#NOP PART 1: VARIABLES:
 #NOP
 #VARIABLE {Ench_Reset} {<088>}
 #VARIABLE {Ench_Blank} {<abc><AAA>}
