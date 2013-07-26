@@ -162,10 +162,10 @@
 #NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
 #NOP
 #NOP
 #NOP =============================================
@@ -189,18 +189,18 @@
 #NOP IMPRESSED
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))|$Rod_Current-------$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))$Rod_Blank|$Rod_Current-------$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))|$Rod_Current-------$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imbued)))))))$Rod_Blank|$Rod_Current-------$Rod_Reset]}
 #NOP
 #NOP IMPRINTED
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.$}
-  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
+  {   %3\\$Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
 #SUBSTITUTE
   {^The %1 {is|are} imprinted with the ritual %2 and {is|are} not dependent on any other part of %3.$}
-  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))|)))))))$Rod_Reset]}
+  { $Rod_Part %1$Rod_Reset\t[$Rod_Ritual %2 $Rod_Reset]\t[$Rod_Imprinted)))))))$Rod_Blank|$Rod_Imprinted)))))))$Rod_Reset]}
 
 
 

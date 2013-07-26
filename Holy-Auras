@@ -1,22 +1,22 @@
 #SUBSTITUTE
-  {radiates a reassuring cyan glow like the sun after rain.}
-  {has been consecrated to the service of Pishe.}
+  {^%1 radiates a reassuring cyan glow like the sun after rain.}
+  {<cfb>%1 has been consecrated to the service of Pishe.<088>}
 #SUBSTITUTE
-  {gently radiates a fuzzy white glow.}
-  {has been consecrated to the service of Gufnork}
+  {^%1 gently radiates a fuzzy white glow.}
+  {<cfb>%1 has been consecrated to the service of Gufnork.<088>}
 #SUBSTITUTE
-  {stylishly radiates a pristine golden light.}
-  {has been consecrated to the service of Gapp}
+  {^%1 stylishly radiates a pristine {blue|golden} light.}
+  {<cfb>%1 has been consecrated to the service of Gapp.<088>}
 #SUBSTITUTE
-  {indifferently radiates a harsh grey light.}
-  {has been consecrated to the service of Sandelfon}
+  {^%1 indifferently radiates a harsh grey light.}
+  {<cfb>%1 has been consecrated to the service of Sandelfon.<088>}
 #SUBSTITUTE
-  {slowly pulsates, washing from a deep blue to a light aquamarine.}
-  {has been consecrated to the service of Fish}
+  {^%1 slowly pulsates, washing from a deep blue to a light aquamarine.}
+  {<cfb>%1 has been consecrated to the service of Fish.<088>}
 #SUBSTITUTE
-  {sheds an irritating orange glow that makes you feel that someone is creeping up on you.}
-  {has been consecrated to the service of Hat}
+  {^%1 sheds an irritating orange glow that makes you feel that someone is creeping up on you.}
+  {<cfb>%1 has been consecrated to the service of Hat.<088>}
 #SUBSTITUTE
-  {beats regularly with blood-red pulses of light.}
-  {has been consecrated to the service of Sek}
+  {^%1 beats regularly with blood-red pulses of light.}
+  {<cfb>%1 has been consecrated to the service of Sek.<088>}
 
