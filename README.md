@@ -26,13 +26,16 @@ CURRENT MODULES:
 For priests
 
     Holy Auras
-          Substitutes the "flavour" line in amulets, holy symbols, relics and prayer books for a simpler, coloured one which simply states the name of the god to whom the item has been consecrated.
+          Substitutes the "flavour" line in amulets, holy symbols, relics and prayer books for a simpler, 
+          coloured one which simply states the name of the god to whom the item has been consecrated.
 
     Faith Rod Charges
-          Displays a progress bar per faith rod part, indicating the ritual, if any, that it contains, and the degree to which it has been charged.
+          Displays a progress bar per faith rod part, indicating the ritual, if any, that it contains, and the
+          degree to which it has been charged.
 
     Prayer Beads Charges
-          Displays a progress bar for a set of prayer beads, depicting the stage to which it has been charged and a rough approximation of the holy items it can replace at the time.
+          Displays a progress bar for a set of prayer beads, depicting the stage to which it has been charged
+          and a rough approximation of the holy items it can replace at the time.
 
 CONSIDERATIONS:
    - For most of the level bar modules, a terminal width of 160 columns or higher is required; otherwise the bars will not appear at all.
