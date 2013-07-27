@@ -1,11 +1,7 @@
 tintin-modules
 ==============
 
-          DISCWORLD MUD
-             Modules
-             for the
-             Tintin++
-             Mudclient
+          DISCWORLD MUD Modules for the Tintin++ Mudclient
 
 
 This is a collection of small modules, all independent from each other, and tailored for specific guilds.
