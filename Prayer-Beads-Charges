@@ -17,14 +17,14 @@
 #NOP
 #NOP PART 1: VARIABLES:
 #NOP
-#VARIABLE {Bead_Reset} {<088>}
-#VARIABLE {Bead_Blank} {<abc><AAA>}
+#VARIABLE {TTMod_Reset} {<088>}
+#VARIABLE {TTMod_Blank} {<abc><AAA>}
+#VARIABLE {TTMod_Current} {<FBA>}
 #VARIABLE {Bead_Basic} {<ABA>}
 #VARIABLE {Bead_AmuSym} {<BBA>}
 #VARIABLE {Bead_Relic} {<CBA>}
 #VARIABLE {Bead_1Wis} {<DBA>}
 #VARIABLE {Bead_2Wis} {<EBA>}
-#VARIABLE {Bead_Current} {<FBA>}
 #NOP =============================================
 #NOP
 #NOP
@@ -32,7 +32,7 @@
 #NOP
 #NOP PART 2: PRIESTS:
 #NOP
-#NOP  $Bead_Current indicates current charge level.
+#NOP  $TTMod_Current indicates current charge level.
 #NOP
 #NOP  $Bead_Imbued indicates rod is so far up to imbued level.
 #NOP    The ritual can be used once, but it will be lost.
@@ -46,80 +46,80 @@
 #NOP 1
 #SUBSTITUTE
   {It is surrounded by a pale, flickering holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Current $Bead_Blank    |   | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$TTMod_Current $TTMod_Blank    |   | |  |     $TTMod_Reset]}
 #NOP
 #NOP 2
 #SUBSTITUTE
   {It is surrounded by a weakly flickering holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Basic $Bead_Current $Bead_Blank   |   | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_Basic $TTMod_Current $TTMod_Blank   |   | |  |     $TTMod_Reset]}
 #NOP
 #NOP 3
 #SUBSTITUTE
   {It is surrounded by a flickering holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Basic  $Bead_Current $Bead_Blank  |   | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_Basic  $TTMod_Current $TTMod_Blank  |   | |  |     $TTMod_Reset]}
 #NOP
 #NOP 4
 #SUBSTITUTE
   {It is surrounded by an unsteady holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Basic   $Bead_Current $Bead_Blank |   | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_Basic   $TTMod_Current $TTMod_Blank |   | |  |     $TTMod_Reset]}
 #NOP
 #NOP 5
 #SUBSTITUTE
   {It is surrounded by a faint holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Basic    $Bead_Current $Bead_Blank|   | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_Basic    $TTMod_Current $TTMod_Blank|   | |  |     $TTMod_Reset]}
 #NOP
 #NOP 6
 #SUBSTITUTE
   {It is surrounded by a pale holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_AmuSym     |$Bead_Current $Bead_Blank  | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_AmuSym     |$TTMod_Current $TTMod_Blank  | |  |     $TTMod_Reset] Amu Sym}
 #NOP
 #NOP 7
 #SUBSTITUTE
   {It is surrounded by a weak holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_AmuSym     | $Bead_Current $Bead_Blank | |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_AmuSym     | $TTMod_Current $TTMod_Blank | |  |     $TTMod_Reset] Amu Sym}
 #NOP
 #NOP 8
 #SUBSTITUTE
   {It is surrounded by a steady holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_AmuSym     |  $Bead_Current $Bead_Blank| |  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_AmuSym     |  $TTMod_Current $TTMod_Blank| |  |     $TTMod_Reset] Amu Sym}
 #NOP
 #NOP 9
 #SUBSTITUTE
   {It is surrounded by a strong holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_Relic     |   |$Bead_Current $Bead_Blank|  |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_Relic     |   |$TTMod_Current $TTMod_Blank|  |     $TTMod_Reset] Amu Sym Rel}
 #NOP
 #NOP 10
 #SUBSTITUTE
   {It is surrounded by a bright holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_1Wis     |   | |$Bead_Current $Bead_Blank |     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_1Wis     |   | |$TTMod_Current $TTMod_Blank |     $TTMod_Reset] Amu Sym Rel +1Wis}
 #NOP
 #NOP 11
 #SUBSTITUTE
   {It is surrounded by a vibrant holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_1Wis     |   | | $Bead_Current $Bead_Blank|     $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_1Wis     |   | | $TTMod_Current $TTMod_Blank|     $TTMod_Reset] Amu Sym Rel +1Wis}
 #NOP
 #NOP 12
 #SUBSTITUTE
   {It is surrounded by a radiant holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_2Wis     |   | |  |$Bead_Current $Bead_Blank    $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_2Wis     |   | |  |$TTMod_Current $TTMod_Blank    $TTMod_Reset] Amu Sym Rel +2Wis}
 #NOP
 #NOP 13
 #SUBSTITUTE
   {It is surrounded by a brilliant holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_2Wis     |   | |  | $Bead_Current $Bead_Blank   $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_2Wis     |   | |  | $TTMod_Current $TTMod_Blank   $TTMod_Reset] Amu Sym Rel +2Wis}
 #NOP
 #NOP 14
 #SUBSTITUTE
   {It is surrounded by a dazzling holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_2Wis     |   | |  |  $Bead_Current $Bead_Blank  $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_2Wis     |   | |  |  $TTMod_Current $TTMod_Blank  $TTMod_Reset] Amu Sym Rel +2Wis}
 #NOP
 #NOP 15
 #SUBSTITUTE
   {It is surrounded by a blazing holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_2Wis     |   | |  |   $Bead_Current $Bead_Blank $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_2Wis     |   | |  |   $TTMod_Current $TTMod_Blank $TTMod_Reset] Amu Sym Rel +2Wis}
 #NOP
 #NOP 16
 #SUBSTITUTE
   {It is surrounded by a blinding holy aura instilled by the %1 invocations it has been involved in}
-  {  Charge level: [$Bead_Blank$Bead_2Wis     |   | |  |    $Bead_Current $Bead_Reset]}
+  {  Charge level: [$TTMod_Blank$Bead_2Wis     |   | |  |    $TTMod_Current $TTMod_Reset] Amu Sym Rel +2Wis}
 
