@@ -9,7 +9,7 @@ This is a collection of small modules, all independent from each other, and tail
 CURRENT MODULES:
 ---------------
 
-  For caster classes (Wizards, Witches)
+For caster classes (Wizards, Witches)
    
     Enchantment Levels
           Displays the current enchantment level of an item in the form of a progress bar.
@@ -32,6 +32,12 @@ For priests
     Prayer Beads Charges
           Displays a progress bar for a set of prayer beads, depicting the stage to which it has been charged
           and a rough approximation of the holy items it can replace at the time.
+
+For everyone
+
+    Moon Dragon
+          We all know those adorable little munchkins can be a bit spammy at times.
+          This module aims to make their antics a bit less intrusive by dimming them.
 
 CONSIDERATIONS:
    - For most of the level bar modules, a terminal width of 160 columns or higher is required; otherwise the bars will not appear at all.
