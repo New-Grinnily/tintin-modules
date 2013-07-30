@@ -15,9 +15,13 @@ For caster classes (Wizards, Witches)
           Displays the current enchantment level of an item in the form of a progress bar.
    
     Delusion Stages
-
           Displays a progress bar, indicating at which stage of the pampering process the item is at the moment.
           It does not represent in any way the time it will take for the item to complete the process and "turn".
+
+    Unseen University Library SpeedWalks
+          A set of aliased speedwalks to help you reach some of the most frequently visited spots within the Library.
+          Use with care. There's always a risk of ending up in L-Space whenever you move through a magical library.
+          You can type 'uul' for usage instructions.
 
 For priests
 
