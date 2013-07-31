@@ -1,0 +1,4 @@
+#IF {&{TTMod_MDragon}} {#NOP} {#VARIABLE {TTMod_MDragon} {<aab>}}
+#HIGHLIGHT {{An|A|The} %1 moon dragon's %2 eyes whirl slowly.} {$TTMod_MDragon}
+#HIGHLIGHT {{An|A|The} %1 moon dragon {and |arche|arrive|back|begin|bite|brushe|charm|chatter|cheep|chew|chirrup|comb|come|cover|croon|curl|daydream|doe|drop|emerge|enter|flap|flashe|flick|fluff|flutter|get|gnaw|goe|hiccup|hisse|hop|hum|ignore|investigate|kick|lick|look|mowr|nestle|nibble|nod|nuzzle|open|pad|peer|preen|pull|purr|run|rustle|scamper|serenade|set|settle|shake|shuffle|sigh|sing|sit|skip|smirk|sniff|snuffle|soar|somersault|sparkle|spit|splashe|squeak|stand|stare|start|step|stretche|strut|submit|succeed|swear|swim|thump|tickle|trill|tug|unfold|waddle|wander|warble|whistle|wriggle|yawn|yowl}%2.} {$TTMod_MDragon}
+
