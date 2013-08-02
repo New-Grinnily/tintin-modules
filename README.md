@@ -21,7 +21,7 @@ For caster classes (Wizards, Witches)
     Unseen University Library SpeedWalks
           A set of aliased speedwalks to help you reach some of the most frequently visited spots within the Library.
           Use with care. There's always a risk of ending up in L-Space whenever you move through a magical library.
-          You can type 'uul' for usage instructions.
+          You can type 'uul' for usage instructions and a list of destinations.
 
 For priests
 
