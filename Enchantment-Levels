@@ -36,7 +36,7 @@
 #NOP
 #NOP PART 2: CASTERS:
 #NOP
-#NOP  $TTMod_Current indicates current enchantment level.
+#NOP  ${TTMod_Current} indicates current enchantment level.
 #NOP
 #NOP  $Ench_n reflects the level to which the item has been enchanted (n).
 #NOP
@@ -45,51 +45,51 @@
 #NOP 1
 #SUBSTITUTE
   {It occasionally pulses with octarine light.}
-  {  Enchantment: [$TTMod_Current $TTMod_Blank         $TTMod_Reset]}
+  {  Enchanted: [${TTMod_Current}1$TTMod_Blank         $TTMod_Reset]}
 #NOP
 #NOP 2
 #SUBSTITUTE
   {It emits a slight octarine glow.}
-  {  Enchantment: [$Ench_2 $TTMod_Current $TTMod_Blank        $TTMod_Reset]}
+  {  Enchanted: [$Ench_2 ${TTMod_Current}2$TTMod_Blank        $TTMod_Reset]}
 #NOP
 #NOP 3
 #SUBSTITUTE
   {It softly pulses in dull octarine shades.}
-  {  Enchantment: [$Ench_3  $TTMod_Current $TTMod_Blank       $TTMod_Reset]}
+  {  Enchanted: [$Ench_3  ${TTMod_Current}3$TTMod_Blank       $TTMod_Reset]}
 #NOP
 #NOP 4
 #SUBSTITUTE
-  {It gives off a steady, but dull, octarine glow.}
-  {  Enchantment: [$Ench_4   $TTMod_Current $TTMod_Blank      $TTMod_Reset]}
+  {It gives off a steady but dull octarine glow.}
+  {  Enchanted: [$Ench_4   ${TTMod_Current}4$TTMod_Blank      $TTMod_Reset]}
 #NOP
 #NOP 5
 #SUBSTITUTE
   {It gives off a steady octarine glow.}
-  {  Enchantment: [$Ench_5    $TTMod_Current $TTMod_Blank     $TTMod_Reset]}
+  {  Enchanted: [$Ench_5    ${TTMod_Current}5$TTMod_Blank     $TTMod_Reset]}
 #NOP
 #NOP 6
 #SUBSTITUTE
   {It glows an intense octarine.}
-  {  Enchantment: [$Ench_6     $TTMod_Current $TTMod_Blank    $TTMod_Reset]}
+  {  Enchanted: [$Ench_6     ${TTMod_Current}6$TTMod_Blank    $TTMod_Reset]}
 #NOP
 #NOP 7
 #SUBSTITUTE
   {It emits a bright octarine colour.}
-  {  Enchantment: [$Ench_7      $TTMod_Current $TTMod_Blank   $TTMod_Reset]}
+  {  Enchanted: [$Ench_7      ${TTMod_Current}7$TTMod_Blank   $TTMod_Reset]}
 #NOP
 #NOP 8
 #SUBSTITUTE
   {It brightly pulses octarine.}
-  {  Enchantment: [$Ench_8       $TTMod_Current $TTMod_Blank  $TTMod_Reset]}
+  {  Enchanted: [$Ench_8       ${TTMod_Current}8$TTMod_Blank  $TTMod_Reset]}
 #NOP
 #NOP 9
 #SUBSTITUTE
   {It glows brilliant octarine shades.}
-  {  Enchantment: [$Ench_9        $TTMod_Current $TTMod_Blank $TTMod_Reset]}
+  {  Enchanted: [$Ench_9        ${TTMod_Current}9$TTMod_Blank $TTMod_Reset]}
 #NOP
 #NOP Done
 #SUBSTITUTE
   {It radiates pure octarine brilliance.}
-  {  Enchantment: [$Ench_Done          $TTMod_Reset]}
+  {  Enchanted: [$Ench_Done          $TTMod_Reset]}
 #NOP
 

@@ -1,8 +1,10 @@
 #ALIAS  {uul}
   {
     #SHOWME  {   USAGE:\n};
+    #SHOWME  {       uul\t- Show this help.};
+    #SHOWME  {       2uu   \t- speedwalk to the Library entrance from the last book reached via 'uu2lxx'.};
     #SHOWME  {       uu2lxx\t- speedwalk to a specific book from the entrance to the Library.};
-    #SHOWME  {   or: lxx2uu\t- speedwalk to the entrance to the Library from a specific book.\n};
+    #SHOWME  {   or: lxx2uu\t- speedwalk to the Library entrance from a specific book.\n};
     #SHOWME  {  where xx is one of:\n};
     #SHOWME  {\t01\tA copy of Woodeley's Occult Primer};
     #SHOWME  {\t02\tA book of poetry};
@@ -22,22 +24,22 @@
     #SHOWME  {\t16\tBody Parts for the Advanced Student}
   }
 
-#ALIAS  {uu2l01} {#SHOWME {Running to: <fba>A copy of Woodeley's Occult Primer<088>};n;rt;lt}
-#ALIAS  {uu2l02} {#SHOWME {Running to: <fba>A book of poetry<088>};n;lt;rt;lt;#2 rt;fw}
-#ALIAS  {uu2l03} {#SHOWME {Running to: <fba>Librarian's old spot<088>};n;rt;lt;rt;#2 lt}
-#ALIAS  {uu2l04} {#SHOWME {Running to: <fba>Invoakatyons in thee Mysterie of Wynd<088>};n;lt;#2 fw;rt;#2 fw}
-#ALIAS  {uu2l05} {#SHOWME {Running to: <fba>Spelles of thee Arte of Fyre<088>};n;rt;#2 fw;lt;#2 fw;lt;rt}
-#ALIAS  {uu2l06} {#SHOWME {Running to: <fba>Thee Dyscyplyne of thee Stoane<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;#2 rt;#2 lt}
-#ALIAS  {uu2l07} {#SHOWME {Running to: <fba>Cunjuryng for Begynners<088>};n;lt;rt;lt;rt;#2 fw;lt;rt;fw;lt}
-#ALIAS  {uu2l08} {#SHOWME {Running to: <fba>Introeductyon too the Strukture of the Multyverss<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;fw;rt;#2 fw;lt;fw;#2 rt;fw}
-#ALIAS  {uu2l09} {#SHOWME {Running to: <fba>Ae Thousand and Onne thyngs ae Boye cann Do with Corpse Partes<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;fw;rt;#2 fw;#2 lt;fw}
-#ALIAS  {uu2l10} {#SHOWME {Running to: <fba>The Olde Arte of Foode<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#7 fw}
-#ALIAS  {uu2l11} {#SHOWME {Running to: <fba>Weather Magick<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;fw;rt;fw;rt;lt;rt;#2 fw;lt;#2 rt}
-#ALIAS  {uu2l12} {#SHOWME {Running to: <fba>Everything You Ever Wanted to Know About Everything<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#6 fw;lt}
-#ALIAS  {uu2l13} {#SHOWME {Running to: <fba>My Firste Demon-Summoning Booke!<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;#3 fw;rt;lt;fw;lt;rt;fw;lt}
-#ALIAS  {uu2l14} {#SHOWME {Running to: <fba>Gap to L-Space<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#3 fw;rt;fw}
-#ALIAS  {uu2l15} {#SHOWME {Running to: <fba>Intermediate Artifact Magic, fourth ed.<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;#3 fw;rt;#2 lt}
-#ALIAS  {uu2l16} {#SHOWME {Running to: <fba>Body Parts for the Advanced Student<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;fw;lt;rt;#4 fw;lt;rt;lt}
+#ALIAS  {uu2l01} {#ALIAS {2uu} {l012uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>A copy of Woodeley's Occult Primer<088>};n;rt;lt}
+#ALIAS  {uu2l02} {#ALIAS {2uu} {l022uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>A book of poetry<088>};n;lt;rt;lt;#2 rt;fw}
+#ALIAS  {uu2l03} {#ALIAS {2uu} {l032uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Librarian's old spot<088>};n;rt;lt;rt;#2 lt}
+#ALIAS  {uu2l04} {#ALIAS {2uu} {l042uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Invoakatyons in thee Mysterie of Wynd<088>};n;lt;#2 fw;rt;#2 fw}
+#ALIAS  {uu2l05} {#ALIAS {2uu} {l052uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Spelles of thee Arte of Fyre<088>};n;rt;#2 fw;lt;#2 fw;lt;rt}
+#ALIAS  {uu2l06} {#ALIAS {2uu} {l062uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Thee Dyscyplyne of thee Stoane<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;#2 rt;#2 lt}
+#ALIAS  {uu2l07} {#ALIAS {2uu} {l072uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Cunjuryng for Begynners<088>};n;lt;rt;lt;rt;#2 fw;lt;rt;fw;lt}
+#ALIAS  {uu2l08} {#ALIAS {2uu} {l082uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Introeductyon too the Strukture of the Multyverss<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;fw;rt;#2 fw;lt;fw;#2 rt;fw}
+#ALIAS  {uu2l09} {#ALIAS {2uu} {l092uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Ae Thousand and Onne thyngs ae Boye cann Do with Corpse Partes<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;fw;rt;#2 fw;#2 lt;fw}
+#ALIAS  {uu2l10} {#ALIAS {2uu} {l102uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>The Olde Arte of Foode<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#7 fw}
+#ALIAS  {uu2l11} {#ALIAS {2uu} {l112uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Weather Magick<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;fw;rt;fw;rt;lt;rt;#2 fw;lt;#2 rt}
+#ALIAS  {uu2l12} {#ALIAS {2uu} {l122uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Everything You Ever Wanted to Know About Everything<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#6 fw;lt}
+#ALIAS  {uu2l13} {#ALIAS {2uu} {l132uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>My Firste Demon-Summoning Booke!<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;#3 fw;rt;lt;fw;lt;rt;fw;lt}
+#ALIAS  {uu2l14} {#ALIAS {2uu} {l142uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Gap to L-Space<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#3 fw;rt;fw}
+#ALIAS  {uu2l15} {#ALIAS {2uu} {l152uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Intermediate Artifact Magic, fourth ed.<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;#3 fw;rt;#2 lt}
+#ALIAS  {uu2l16} {#ALIAS {2uu} {l162uu;#UNALIAS {2uu}};#SHOWME {Running to: <fba>Body Parts for the Advanced Student<088>};n;lt;rt;lt;#2 rt;lt;#2 fw;lt;rt;fw;rt;lt;#5 fw;lt;#2 fw;rt;fw;lt;rt;#4 fw;lt;rt;lt}
 #ALIAS  {l012uu} {#SHOWME {Running to: <fba>Library entrance<088>};bw;rt;s}
 #ALIAS  {l022uu} {#SHOWME {Running to: <fba>Library entrance<088>};bw;fw;#2 lt;rt;lt;s}
 #ALIAS  {l032uu} {#SHOWME {Running to: <fba>Library entrance<088>};bw;#2 rt;lt;rt;s}

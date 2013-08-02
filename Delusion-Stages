@@ -47,31 +47,31 @@
 #NOP 1
 #SUBSTITUTE
   {It has a faint octarine shadow about it that disappears if you look at it squarely.}
-  {  Deluded: [$TTMod_Current $TTMod_Blank         $TTMod_Reset]}
+  {  Talisman:  [$TTMod_Current $TTMod_Blank         $TTMod_Reset]}
 #NOP
 #NOP 2
 #SUBSTITUTE
   {It has a faint octarine shadow about it.}
-  {  Deluded: [$Delude_2 $TTMod_Current $TTMod_Blank   $TTMod_Reset]}
+  {  Talisman:  [$Delude_2 $TTMod_Current $TTMod_Blank   $TTMod_Reset]}
 #NOP
 #NOP 3
 #SUBSTITUTE
   {It has an octarine shadow about it that flickers occasionally out of the corner of your eye.}
-  {  Deluded: [$Delude_3  $TTMod_Current $TTMod_Blank  $TTMod_Reset]}
+  {  Talisman:  [$Delude_3  $TTMod_Current $TTMod_Blank  $TTMod_Reset]}
 #NOP
 #NOP 4
 #SUBSTITUTE
   {It has a flickering octarine shadow about it.}
-  {  Deluded: [$Delude_4   $TTMod_Current $TTMod_Blank $TTMod_Reset]}
+  {  Talisman:  [$Delude_4   $TTMod_Current $TTMod_Blank $TTMod_Reset]}
 #NOP
 #NOP 5
 #SUBSTITUTE
   {It has a flickering octarine haze about it.}
-  {  Deluded: [$Delude_5    $TTMod_Current $TTMod_Reset]}
+  {  Talisman:  [$Delude_5    $TTMod_Current $TTMod_Reset]}
 #NOP
 #NOP Done
 #SUBSTITUTE
   {It has the hazy octarine sparkle of a magical talisman.}
-  {  Deluded: [$Delude_Done     $TTMod_Reset]}
+  {  Talisman:  [$Delude_Done     $TTMod_Reset]}
 #NOP
 
