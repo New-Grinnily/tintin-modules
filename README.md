@@ -43,6 +43,12 @@ For everyone
           We all know those adorable little munchkins can be a bit spammy at times.
           This module aims to make their antics a bit less intrusive by dimming them.
 
+    Info Bar
+          This adds a status bar at the top of your tintin++ screen, showing stuff such as the current date and time,
+          session name and character name, terminal dimensions, a countdown until you idle-out of the MUD, and the
+          usual stuff (HP, GP, XP, Burden and combat attitudes). In order to make it work, you'll need to load the
+          module and initialise your prompt and hit point monitor by typing 'ttm-prompt'.
+
 CONSIDERATIONS:
    - For most of the level bar modules, a terminal width of 160 columns or higher is required; otherwise the bars will not appear at all.
 
