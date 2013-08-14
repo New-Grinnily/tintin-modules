@@ -1,133 +1,171 @@
-#FORMAT  {now} {%t} {%F %T}
-#SUBSTITUTE  {TTMod_TimeStamp}  {$now}
+#VARIABLE {TTMod_Colour[0]} {<188><faa>};
+#VARIABLE {TTMod_Colour[1]} {<088><fba>};
+#VARIABLE {TTMod_Colour[2]} {<088><fca>};
+#VARIABLE {TTMod_Colour[3]} {<088><fda>};
+#VARIABLE {TTMod_Colour[4]} {<088><fea>};
+#VARIABLE {TTMod_Colour[5]} {<088><ffa>};
+#VARIABLE {TTMod_Colour[6]} {<088><efa>};
+#VARIABLE {TTMod_Colour[7]} {<088><dfa>};
+#VARIABLE {TTMod_Colour[8]} {<088><cfa>};
+#VARIABLE {TTMod_Colour[9]} {<088><bfa>};
+#VARIABLE {TTMod_Colour[10]} {<188><afa>};
 
-#NOP Set prompt and hit point monitor to a format that can be read by the module:
-#ALIAS  {ttm-prompt}
+#FUNCTION {TTMod_ColourScale}
   {
-    prompt "$hurtcolour$ $newline$ TTMod_TimeStamp --> Hp: $hp$($maxhp$)  Gp: $gp$($maxgp$)  Xp: $xp$  Burden: $burden$  Combat: $combat_attitude$ $combat_response$ $newline$ %^RESET%^";
-    monitor "$hurtcolour$+++ Hp: $hp$($maxhp$)  Gp: $gp$($maxgp$)  Xp: $xp$  Burden: $burden$  Combat: $combat_attitude$ $combat_response$ +++ $newline$ %^RESET%^";
+    #MATH {TTMod_ColIndex} {(%1 * 10) / %2};
+    #FORMAT {TTMod_ColIndex} {%d} {$TTMod_ColIndex};
+    #VARIABLE  {result} {$TTMod_Colour[$TTMod_ColIndex]};
   }
 
+#SUBSTITUTE  {TTMod_TimeStamp}  {[${TTMod_Now}]}
 
-#EVENT {SESSION CONNECTED} {#VARIABLE {sess} {%0}}
+#VARIABLE {TTMod_FieldSeparator} {  }
+
+#VARIABLE {TTMod_CAttCol[]} {<088>};
+#VARIABLE {TTMod_CAttCol[insane]} {<fba>};
+#VARIABLE {TTMod_CAttCol[offensive]} {<eca>};
+#VARIABLE {TTMod_CAttCol[neutral]} {<dda>};
+#VARIABLE {TTMod_CAttCol[defensive]} {<cea>};
+#VARIABLE {TTMod_CAttCol[wimp]} {<bfa>};
+
+#VARIABLE {TTMod_CRespCol[]} {<088>};
+#VARIABLE {TTMod_CRespCol[dodge]} {<afa>};
+#VARIABLE {TTMod_CRespCol[neutral]} {<ffa>};
+#VARIABLE {TTMod_CRespCol[parry]} {<fba>};
+
+#ALIAS  {resplit} {#SPLIT 4 1}
+
+#ALIAS  {ttm-prompt} 
+  {
+    prompt "$hurtcolour$TTMod_TimeStamp$newline$--> Hp: $hp$($maxhp$)  Gp: $gp$($maxgp$)  Xp: $xp$ <--$newline$--> Burden: $burden$  Combat: $combat_attitude$ $combat_response$ <-- $newline$ %^RESET%^";
+    monitor $hurtcolour$TTMod_TimeStamp$newline$+++ Hp: $hp$($maxhp$)  Gp: $gp$($maxgp$)  Xp: $xp$ +++$newline$+++ Burden: $burden$  Combat: $combat_attitude$ $combat_response$ +++ $newline$ %^RESET%^;
+  }
+
+#EVENT {SESSION CONNECTED} {#VARIABLE {TTMod_Session} {%0}}
 
 #ACTION  {^You are %1 {of the|the|of} %2{,|.}}
   {
-    #VARIABLE {ToonFlag} {1};
+    #VARIABLE {TTMod_ToonFlag} {1};
 
-    #REGEXP {%1} {^{protected|unable|somewhere|too|a }} {#VARIABLE {ToonFlag} {0}};
-    #REGEXP {%1} {^not {holding|wearing|strong}} {#VARIABLE {ToonFlag} {0}};
-    #REGEXP {$ToonFlag} {1} {#VARIABLE {toon} {%1}};
+    #REGEXP {%1} {^{nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {%1} {^not {holding|wearing|strong}} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {$TTMod_ToonFlag} {1} {#VARIABLE {TTMod_CharName} {%1}};
 
-    #UNVARIABLE {ToonFlag};
+    #UNVARIABLE {TTMod_ToonFlag};
   }
 
-#NOP Capture data from prompt and reset idle-out timer:
-#ACTION {--> Hp: %1(%2)  Gp: %3(%4)  Xp: %5  Burden: %6}
+#ACTION {--> Hp: %1(%2)  Gp: %3(%4)  Xp: %5 <--}
   {
-    #VARIABLE {TTMod_CurHP} {%1}; #VARIABLE {TTMod_MaxHP} {%2};
-    #VARIABLE {TTMod_CurGP} {%3}; #VARIABLE {TTMod_MaxGP} {%3};
+    #VARIABLE {TTMod_CurHP} {%1};
+    #VARIABLE {TTMod_MaxHP} {%2};
+    #VARIABLE {TTMod_CurGP} {%3};
+    #VARIABLE {TTMod_MaxGP} {%4};
     #VARIABLE {TTMod_CurXP} {%5};
-    #VARIABLE {TTMod_Burden} {%6};
+  }
+
+#ACTION {--> Burden: %1%  Combat: %2 %3 <--}
+  {
+    #VARIABLE {TTMod_Burden} {%1};
+    #VARIABLE {TTMod_CAttitude} {%2};
+    #VARIABLE {TTMod_CResponse} {%3};
     #VARIABLE {TTMod_LastCmd} {1800};
+    #VARIABLE {TTMod_LastCol} {<088><afa>};
+    #ECHO {{ } {-4}};
   }
 
-#NOP Capture data from hit point monitor:
-#ACTION {^+++ Hp: %1(%2)  Gp: %3(%4)  Xp: %5  Burden: %6  Combat: %7 %8 +++}
+#ACTION {^+++ Hp: %1(%2)  Gp: %3(%4)  Xp: %5 +++}
   {
-    #VARIABLE {TTMod_CurHP} {%1}; #VARIABLE {TTMod_MaxHP} {%2};
-    #VARIABLE {TTMod_CurGP} {%3}; #VARIABLE {TTMod_MaxGP} {%3};
+    #VARIABLE {TTMod_CurHP} {%1};
+    #VARIABLE {TTMod_MaxHP} {%2};
+    #VARIABLE {TTMod_CurGP} {%3};
+    #VARIABLE {TTMod_MaxGP} {%4};
+    #VARIABLE {TTMod_CurXP} {%5};
+  }
+#ACTION {^+++ Burden: %1%  Combat: %2 %3 +++}
+  {
+    #VARIABLE {TTMod_Burden} {%1};
+    #VARIABLE {TTMod_CAttitude} {%2};
+    #VARIABLE {TTMod_CResponse} {%3};
+  }
+
+#ACTION {^Hp: %1(%2)  Gp: %3(%4)  Xp: %5  Burden: %6%}
+  {
+    #VARIABLE {TTMod_CurHP} {%1};
+    #VARIABLE {TTMod_MaxHP} {%2};
+    #VARIABLE {TTMod_CurGP} {%3};
+    #VARIABLE {TTMod_MaxGP} {%4};
     #VARIABLE {TTMod_CurXP} {%5};
     #VARIABLE {TTMod_Burden} {%6};
   }
 
-#NOP Capture data from 'score brief':
-#ACTION {^Hp: %1(%2)  Gp: %3(%4)  Xp: %5  Burden: %6}
-  {
-    #VARIABLE {TTMod_CurHP} {%1}; #VARIABLE {TTMod_MaxHP} {%2};
-    #VARIABLE {TTMod_CurGP} {%3}; #VARIABLE {TTMod_MaxGP} {%3};
-    #VARIABLE {TTMod_CurXP} {%5};
-    #VARIABLE {TTMod_Burden} {%6};
-    #REGEXP {%6} {^%d%%$}
-      {#VARIABLE {TTMod_Burden} {%6};}
-      {
-        #VARIABLE {TTMod_Burden} {}
-        #PARSE {%6} {TTM_Temp}
-          {
-            #IF {${TTM_Temp}} { }
-              {#BREAK}
-              {#VARIABLE {TTMod_Burden} {${TTMod_Burden}${TTM_Temp}}}
-          }
-      }
-  }
-
-#TICKER  {now}
+#TICKER  {TTMod_InfoBarUpdate}
 {
-  #FORMAT {MudCols} {%C} {};
+  #FORMAT {TTMod_Now} {%t} {%a %F %T};
+  #FORMAT {TTMod_Cols} {%C} {};
+  #FORMAT {TTMod_Rows} {%R} {};
 
-  #FORMAT {MudRows} {%R} {};
-
-  #FORMAT {now} {%t} {[%a %F %T]};
-
-  #IF {&{sess}}
-    {#VARIABLE {sessname} {Session: $sess\t}}
-    {#VARIABLE {sessname} {}};
-
-  #IF {&{toon}}
-    {#VARIABLE {toonname} {Character: $toon\t}}
-    {#VARIABLE {toonname} {}};
-
-  #IF {&{TTMod_PrevHP}} {#NOP} {#VARIABLE {TTMod_PrevHP} {TTMod_CurHP}};
-  #IF {&{TTMod_PrevGP}} {#NOP} {#VARIABLE {TTMod_PrevGP} {TTMod_CurGP}};
-  #IF {&{TTMod_PrevXP}} {#NOP} {#VARIABLE {TTMod_PrevXP} {TTMod_CurXP}};
-
-  #IF {${MudCols}<81} {#VARIABLE {sessname} {}};
-
-
-  #IF {${TTMod_LastCmd}>1600} {#VARIABLE {TTMod_LastCol} {<afa>}}
-    {#IF {${TTMod_LastCmd}>1400} {#VARIABLE {TTMod_LastCol} {<bfa>}}
-       {#IF {${TTMod_LastCmd}>1200} {#VARIABLE {TTMod_LastCol} {<cfa>}}
-          {#IF {${TTMod_LastCmd}>1000} {#VARIABLE {TTMod_LastCol} {<dfa>}}
-             {#IF {${TTMod_LastCmd}>800} {#VARIABLE {TTMod_LastCol} {<efa>}}
-                {#IF {${TTMod_LastCmd}>600} {#VARIABLE {TTMod_LastCol} {<ffa>}}
-                   {#IF {${TTMod_LastCmd}>400} {#VARIABLE {TTMod_LastCol} {<fea>}}
-                      {#IF {${TTMod_LastCmd}>300} {#VARIABLE {TTMod_LastCol} {<fda>}}
-                         {#IF {${TTMod_LastCmd}>120} {#VARIABLE {TTMod_LastCol} {<fca>}}
-                            {#IF {${TTMod_LastCmd}>60} {#VARIABLE {TTMod_LastCol} {<fba>}}
-                                                       {
-                                                         #VARIABLE {TTMod_LastCol} {<188><faa>};
-                                                         #BELL}}}}}}}}}};
-
-
-  #MATH {TTMod_TempDelta} {${TTMod_CurHP} - ${TTMod_PrevHP}};
-  #IF {$TTMod_TempDelta != 0}
+  #IF {${TTMod_LastCmd}<1600} {#VARIABLE {TTMod_LastCol} {<088><bfa>}};
+  #IF {${TTMod_LastCmd}<1400} {#VARIABLE {TTMod_LastCol} {<088><cfa>}};
+  #IF {${TTMod_LastCmd}<1200} {#VARIABLE {TTMod_LastCol} {<088><dfa>}};
+  #IF {${TTMod_LastCmd}<1000} {#VARIABLE {TTMod_LastCol} {<088><efa>}};
+  #IF {${TTMod_LastCmd}<800}  {#VARIABLE {TTMod_LastCol} {<088><ffa>}};
+  #IF {${TTMod_LastCmd}<600}  {#VARIABLE {TTMod_LastCol} {<088><fea>}};
+  #IF {${TTMod_LastCmd}<400}  {#VARIABLE {TTMod_LastCol} {<088><fda>}};
+  #IF {${TTMod_LastCmd}<300}  {#VARIABLE {TTMod_LastCol} {<088><fca>}};
+  #IF {${TTMod_LastCmd}<120}  {#VARIABLE {TTMod_LastCol} {<088><fba>}};
+  #IF {${TTMod_LastCmd}<60}   {#VARIABLE {TTMod_LastCol} {<188><faa>}};
+  #IF {${TTMod_LastCmd}<60}
     {
-      #VARIABLE {TTMod_DeltaHP} { (${TTMod_TempDelta})};
-      #VARIABLE {TTMod_PrevHP}  {${TTMod_CurHP}};
+      #IF {${TTMod_LastCmd}>=0}
+      {
+        #BELL;
+        #SHOWME {<fca><AAF> WARNING! YOU WILL IDLE OUT IN ${TTMod_LastCmd} SECONDS! <088>} {-4}
+      }
+      {#SHOWME {} {-4}}
     };
 
-  #MATH {TTMod_TempDelta} {${TTMod_CurGP} - ${TTMod_PrevGP}};
-  #IF {$TTMod_TempDelta != 0}
-    {
-      #VARIABLE {TTMod_DeltaGP} { (${TTMod_TempDelta})};
-      #VARIABLE {TTMod_PrevGP}  {${TTMod_CurGP}};
-    };
+  #VARIABLE {TTMod_TermString} {[${TTMod_LastCol}Term: ${TTMod_Rows}x${TTMod_Cols}<088>]${TTMod_FieldSeparator}};
 
-  #MATH {TTMod_TempDelta} {${TTMod_CurXP} - ${TTMod_PrevXP}};
-  #IF {$TTMod_TempDelta != 0}
-    {
-      #VARIABLE {TTMod_DeltaXP} { (${TTMod_TempDelta})};
-      #VARIABLE {TTMod_PrevXP}  {${TTMod_CurXP}};
-    };
+  #IF {&{TTMod_Session}}
+    {#VARIABLE {TTMod_SessionString} {[${TTMod_LastCol}Session: $TTMod_Session<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_SessionString} {}};
 
-  #SHOWME {${now}  ${sessname}${toonname}Term: ${MudRows}x${MudCols}\t[${TTMod_LastCol}${TTMod_LastCmd}<088>]} {-1};
-  #SHOWME {HP: ${TTMod_CurHP}/${TTMod_MaxHP}${TTMod_DeltaHP}  GP: ${TTMod_CurGP}/${TTMod_MaxGP}${TTMod_DeltaGP}  XP: ${TTMod_CurXP}${TTMod_DeltaXP}  Burden: ${TTMod_Burden}} {-2};
+  #IF {&{TTMod_CharName}}
+    {#VARIABLE {TTMod_CharNameString} {[Character: $TTMod_CharName<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_CharNameString} {}};
+
+  #VARIABLE {TTMod_NowString} {[${TTMod_LastCol}${TTMod_Now}<088>]${TTMod_FieldSeparator}};
+
+  #VARIABLE {TTMod_LastCmdString} {[${TTMod_LastCol}Idle out in ${TTMod_LastCmd}s.<088>]${TTMod_FieldSeparator}};
+
+  #IF {&{TTMod_CurGP} && &{TTMod_MaxGP}}
+    {#VARIABLE {TTMod_HPString} {[@TTMod_ColourScale{{$TTMod_CurHP}{$TTMod_MaxHP}}HP: ${TTMod_CurHP}/${TTMod_MaxHP}<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_HPString} {}};
+
+  #IF {&{TTMod_CurGP} && &{TTMod_MaxGP}}
+    {#VARIABLE {TTMod_GPString} {[@TTMod_ColourScale{{$TTMod_CurGP}{$TTMod_MaxGP}}GP: ${TTMod_CurGP}/${TTMod_MaxGP}<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_GPString} {}};
+
+  #IF {&{TTMod_CurXP}}
+    {#VARIABLE {TTMod_XPString} {[XP: ${TTMod_CurXP}<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_XPString} {}};
+
+  #IF {&{TTMod_Burden}}
+    {#VARIABLE {TTMod_BurdenString} {[Burden: ${TTMod_Burden}%<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_BurdenString} {}};
+
+  #VARIABLE {TTMod_CombatAttString}  {[Att.: ${TTMod_CAttCol[${TTMod_CAttitude}]}${TTMod_CAttitude}<088>]${TTMod_FieldSeparator}};
+  #VARIABLE {TTMod_CombatRespString} {[Resp.: ${TTMod_CRespCol[${TTMod_CResponse}]}${TTMod_CResponse}<088>]${TTMod_FieldSeparator}};
+  #IF {&{TTMod_CAttitude} && &{TTMod_CResponse}}
+    {#VARIABLE {TTMod_CombatString} {Combat ${TTMod_CombatAttString}${TTMod_CombatRespString}};}
+    {#VARIABLE {TTMod_CombatString} {}};
+
+  #SHOWME {${TTMod_NowString}${TTMod_SessionString}${TTMod_TermString}${TTMod_LastCmdString}} {-1};
+  #SHOWME {${TTMod_CharNameString}${TTMod_HPString}${TTMod_GPString}} {-2};
+  #SHOWME {${TTMod_XPString}${TTMod_BurdenString}${TTMod_CombatString}} {-3};
 
   #MATH {TTMod_LastCmd} {$TTMod_LastCmd - 1};
 
-  #UNVARIABLE {TTMod_TempDelta};
-  #UNVARIABLE {sessname};
-  #UNVARIABLE {toonname};
 }  {1}
 
 
