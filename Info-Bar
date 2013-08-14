@@ -13,7 +13,6 @@
 #FUNCTION {TTMod_ColourScale}
   {
     #MATH {TTMod_ColIndex} {(%1 * 10) / %2};
-    #FORMAT {TTMod_ColIndex} {%d} {$TTMod_ColIndex};
     #VARIABLE  {result} {$TTMod_Colour[$TTMod_ColIndex]};
   }
 
