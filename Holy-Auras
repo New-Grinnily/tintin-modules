@@ -5,7 +5,7 @@
   {^%1 gently radiates a fuzzy white glow.}
   {<cfb>%1 has been consecrated to the service of Gufnork.<088>}
 #SUBSTITUTE
-  {^%1 stylishly radiates a pristine {yellow|blue|golden} light.}
+  {^%1 stylishly radiates a pristine %2 light.}
   {<cfb>%1 has been consecrated to the service of Gapp.<088>}
 #SUBSTITUTE
   {^%1 indifferently radiates a harsh grey light.}
