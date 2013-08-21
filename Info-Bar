@@ -48,7 +48,7 @@
   {
     #VARIABLE {TTMod_ToonFlag} {1};
 
-    #REGEXP {%1} {^{remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {%1} {^{pushed into a wall|remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
     #REGEXP {%1} {^not {holding|wearing|strong}} {#VARIABLE {TTMod_ToonFlag} {0}};
     #REGEXP {$TTMod_ToonFlag} {1} {#VARIABLE {TTMod_CharName} {%1}};
 
@@ -105,6 +105,15 @@
   #FORMAT {TTMod_Cols} {%C} {};
   #FORMAT {TTMod_Rows} {%R} {};
 
+  #FUNCTION {TTMod_HR}
+  {
+    #VARIABLE {TTMod_Char} {%1};
+    #VARIABLE {TTMod_Line} {${TTMod_Char}};
+    #LOOP 2 ${TTMod_Cols} i
+      {#VARIABLE {TTMod_Line} {${TTMod_Line}${TTMod_Char}}};
+    #VARIABLE {result} {${TTMod_Line}};
+  }
+
   #IF {${TTMod_LastCmd}<1600} {#VARIABLE {TTMod_LastCol} {<088><bfa>}};
   #IF {${TTMod_LastCmd}<1400} {#VARIABLE {TTMod_LastCol} {<088><cfa>}};
   #IF {${TTMod_LastCmd}<1200} {#VARIABLE {TTMod_LastCol} {<088><dfa>}};
@@ -120,10 +129,11 @@
       #IF {${TTMod_LastCmd}>=0}
       {
         #BELL;
-        #SHOWME {<fca><AAF> WARNING! YOU WILL IDLE OUT IN ${TTMod_LastCmd} SECONDS! <088>} {2}
+        #SHOWME {<fca><AAF> WARNING! YOU WILL IDLE OUT IN ${TTMod_LastCmd} SECONDS! <088>} {1}
       }
-      {#SHOWME {} {2}}
-    };
+      {#SHOWME {@{TTMod_HR}{-}} {1};}
+    }
+    {#SHOWME {@{TTMod_HR}{-}} {1};};
 
   #VARIABLE {TTMod_TermString} {[${TTMod_LastCol}Term: ${TTMod_Rows}x${TTMod_Cols}<088>]${TTMod_FieldSeparator}};
 
@@ -161,9 +171,11 @@
     {#VARIABLE {TTMod_CombatString} {Combat ${TTMod_CombatAttString}${TTMod_CombatRespString}};}
     {#VARIABLE {TTMod_CombatString} {}};
 
-  #SHOWME {${TTMod_NowString}${TTMod_SessionString}${TTMod_TermString}${TTMod_LastCmdString}} {5};
-  #SHOWME {${TTMod_CharNameString}${TTMod_HPString}${TTMod_GPString}} {4};
-  #SHOWME {${TTMod_XPString}${TTMod_BurdenString}${TTMod_CombatString}} {3};
+  #SHOWME {@TTMod_HR{=}} {5};
+  #SHOWME {${TTMod_NowString}${TTMod_SessionString}${TTMod_TermString}${TTMod_LastCmdString}} {4};
+  #SHOWME {${TTMod_CharNameString}${TTMod_HPString}${TTMod_GPString}} {3};
+  #SHOWME {${TTMod_XPString}${TTMod_BurdenString}${TTMod_CombatString}} {2};
+  #SHOWME {@TTMod_HR{_}} {1};
 
   #MATH {TTMod_LastCmd} {$TTMod_LastCmd - 1};
 
