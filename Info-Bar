@@ -32,7 +32,7 @@
 #VARIABLE {TTMod_CRespCol[neutral]} {<ffa>};
 #VARIABLE {TTMod_CRespCol[parry]} {<fba>};
 
-#ALIAS  {resplit} {#SPLIT 4 1}
+#ALIAS  {resplit} {#SPLIT 0 5}
 
 #ACTION {^Enter password:} {#VARIABLE {TTMod_LastCmd} {1800}}
 
@@ -120,9 +120,9 @@
       #IF {${TTMod_LastCmd}>=0}
       {
         #BELL;
-        #SHOWME {<fca><AAF> WARNING! YOU WILL IDLE OUT IN ${TTMod_LastCmd} SECONDS! <088>} {-4}
+        #SHOWME {<fca><AAF> WARNING! YOU WILL IDLE OUT IN ${TTMod_LastCmd} SECONDS! <088>} {2}
       }
-      {#SHOWME {} {-4}}
+      {#SHOWME {} {2}}
     };
 
   #VARIABLE {TTMod_TermString} {[${TTMod_LastCol}Term: ${TTMod_Rows}x${TTMod_Cols}<088>]${TTMod_FieldSeparator}};
@@ -161,9 +161,9 @@
     {#VARIABLE {TTMod_CombatString} {Combat ${TTMod_CombatAttString}${TTMod_CombatRespString}};}
     {#VARIABLE {TTMod_CombatString} {}};
 
-  #SHOWME {${TTMod_NowString}${TTMod_SessionString}${TTMod_TermString}${TTMod_LastCmdString}} {-1};
-  #SHOWME {${TTMod_CharNameString}${TTMod_HPString}${TTMod_GPString}} {-2};
-  #SHOWME {${TTMod_XPString}${TTMod_BurdenString}${TTMod_CombatString}} {-3};
+  #SHOWME {${TTMod_NowString}${TTMod_SessionString}${TTMod_TermString}${TTMod_LastCmdString}} {5};
+  #SHOWME {${TTMod_CharNameString}${TTMod_HPString}${TTMod_GPString}} {4};
+  #SHOWME {${TTMod_XPString}${TTMod_BurdenString}${TTMod_CombatString}} {3};
 
   #MATH {TTMod_LastCmd} {$TTMod_LastCmd - 1};
 
