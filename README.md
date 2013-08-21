@@ -50,7 +50,7 @@ For everyone
           In order to make it work, you'll need to load the module and type 'ttm-prompt' to initialise your prompt and hit point monitor.
 
 CONSIDERATIONS:
-   - For most of the level bar modules, a sufficiently high terminal width is required (probably 160+ columns in most cases); otherwise the bars will not appear at all.
+   - If the current terminal width is too small, the progress bars will not appear at all. Depending on the module, you may need a terminal width in excess of 160 columns.
 
 If you should find any bugs, or if you have any doubts or ideas regarding any of my modules, please feel free to contact me in the game.
 
