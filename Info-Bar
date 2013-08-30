@@ -48,7 +48,7 @@
   {
     #VARIABLE {TTMod_ToonFlag} {1};
 
-    #REGEXP {%1} {^{pushed into a wall|remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {%1} {^{already wearing|barely|pushed into a wall|remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
     #REGEXP {%1} {^not {holding|wearing|strong}} {#VARIABLE {TTMod_ToonFlag} {0}};
     #REGEXP {$TTMod_ToonFlag} {1} {#VARIABLE {TTMod_CharName} {%1}};
 
@@ -142,7 +142,7 @@
     {#VARIABLE {TTMod_SessionString} {}};
 
   #IF {&{TTMod_CharName}}
-    {#VARIABLE {TTMod_CharNameString} {[Character: $TTMod_CharName<088>]${TTMod_FieldSeparator}}}
+    {#VARIABLE {TTMod_CharNameString} {[$TTMod_Colour[10]Character: $TTMod_CharName<088>]${TTMod_FieldSeparator}}}
     {#VARIABLE {TTMod_CharNameString} {}};
 
   #VARIABLE {TTMod_NowString} {[${TTMod_LastCol}${TTMod_Now}<088>]${TTMod_FieldSeparator}};
