@@ -39,15 +39,18 @@ For priests
 
 For everyone
 
-    Moon Dragon
-          We all know those adorable little munchkins can be a bit spammy at times.
-          This module aims to make their antics a bit less intrusive by dimming them.
+    Condition Levels
+          This module changes the text description of an item's condition for a clearer (I hope) progress bar.
 
     Info Bar
           This adds a status bar at the top of your tintin++ screen, showing stuff such as the current date and time,
           session name and character name, terminal dimensions, a countdown until you idle-out of the MUD, and the
           usual stuff (HP, GP, XP, Burden and combat attitudes).
           In order to make it work, you'll need to load the module and type 'ttm-prompt' to initialise your prompt and hit point monitor.
+
+    Moon Dragon
+          We all know those adorable little munchkins can be a bit spammy at times.
+          This module aims to make their antics a bit less intrusive by dimming them.
 
 CONSIDERATIONS:
    - If the current terminal width is too small, the progress bars will not appear at all. Depending on the module, you may need a terminal width in excess of 160 columns.

@@ -48,8 +48,8 @@
   {
     #VARIABLE {TTMod_ToonFlag} {1};
 
-    #REGEXP {%1} {^{already wearing|barely|pushed into a wall|remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
-    #REGEXP {%1} {^not {holding|wearing|strong}} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {%1} {^{extremely|already wearing|barely|pushed into a wall|remembering|nearly struck|now a member|carried away|exactly|in wimpy|finding|evil|good|neutral|protected|unable|somewhere|too|a }} {#VARIABLE {TTMod_ToonFlag} {0}};
+    #REGEXP {%1} {^not {being|holding|wearing|strong}} {#VARIABLE {TTMod_ToonFlag} {0}};
     #REGEXP {$TTMod_ToonFlag} {1} {#VARIABLE {TTMod_CharName} {%1}};
 
     #UNVARIABLE {TTMod_ToonFlag};

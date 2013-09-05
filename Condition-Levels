@@ -1,0 +1,61 @@
+#NOP  CONDITION LEVELS:
+
+#NOP =============================================
+#NOP   INDEX:
+#NOP   Part 1: Variable declaration.
+#NOP   Part 2: Code.
+#NOP =============================================
+
+
+#NOP =============================================
+#NOP PART 1: VARIABLES:
+
+#VARIABLE {TTMod_Reset} {<088>}
+#VARIABLE {TTMod_Blank} {<abc><AAA>}
+#VARIABLE {TTMod_Condition_A} {<AFA><afa>}
+#VARIABLE {TTMod_Condition_9} {<BFA><bfa>}
+#VARIABLE {TTMod_Condition_8} {<CFA><cfa>}
+#VARIABLE {TTMod_Condition_7} {<DFA><dfa>}
+#VARIABLE {TTMod_Condition_6} {<EFA><efa>}
+#VARIABLE {TTMod_Condition_5} {<FFA><ffa>}
+#VARIABLE {TTMod_Condition_4} {<FEA><fea>}
+#VARIABLE {TTMod_Condition_3} {<FDA><fda>}
+#VARIABLE {TTMod_Condition_2} {<FCA><fca>}
+#VARIABLE {TTMod_Condition_1} {<FBA><fba>}
+#VARIABLE {TTMod_Condition_0} {<FAA><faa>}
+#NOP =============================================
+
+
+#NOP =============================================
+
+#NOP PART 2: CODE:
+
+#NOP  $TTMod_Condition_0 - TTMod_Condition_A reflect the condition of the item.
+
+#NOP =============================================
+
+#NOP 1
+#SUBSTITUTE {The %1 is in excellent condition.}   {Condition: [$TTMod_Condition_A           $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in very good condition.}   {Condition: [$TTMod_Condition_9          $TTMod_Blank $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in good condition.}        {Condition: [$TTMod_Condition_8         $TTMod_Blank  $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in decent condition.}      {Condition: [$TTMod_Condition_7        $TTMod_Blank   $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in fairly good condition.} {Condition: [$TTMod_Condition_6       $TTMod_Blank    $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in fairly poor condition.} {Condition: [$TTMod_Condition_5      $TTMod_Blank     $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in poor condition.}        {Condition: [$TTMod_Condition_4     $TTMod_Blank      $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in really poor condition.} {Condition: [$TTMod_Condition_3    $TTMod_Blank       $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in very poor condition.}   {Condition: [$TTMod_Condition_2   $TTMod_Blank        $TTMod_Reset]}
+#SUBSTITUTE {The %1 is in atrocious condition.}   {Condition: [$TTMod_Condition_1  $TTMod_Blank         $TTMod_Reset]}
+#SUBSTITUTE {The %1 is a complete wreck.}         {Condition: [$TTMod_Condition_0 $TTMod_Blank          $TTMod_Reset]}
+
+#SUBSTITUTE {It is in excellent condition.}   {Condition: [$TTMod_Condition_A           $TTMod_Reset]}
+#SUBSTITUTE {It is in very good condition.}   {Condition: [$TTMod_Condition_9          $TTMod_Blank $TTMod_Reset]}
+#SUBSTITUTE {It is in good condition.}        {Condition: [$TTMod_Condition_8         $TTMod_Blank  $TTMod_Reset]}
+#SUBSTITUTE {It is in decent condition.}      {Condition: [$TTMod_Condition_7        $TTMod_Blank   $TTMod_Reset]}
+#SUBSTITUTE {It is in fairly good condition.} {Condition: [$TTMod_Condition_6       $TTMod_Blank    $TTMod_Reset]}
+#SUBSTITUTE {It is in fairly poor condition.} {Condition: [$TTMod_Condition_5      $TTMod_Blank     $TTMod_Reset]}
+#SUBSTITUTE {It is in poor condition.}        {Condition: [$TTMod_Condition_4     $TTMod_Blank      $TTMod_Reset]}
+#SUBSTITUTE {It is in really poor condition.} {Condition: [$TTMod_Condition_3    $TTMod_Blank       $TTMod_Reset]}
+#SUBSTITUTE {It is in very poor condition.}   {Condition: [$TTMod_Condition_2   $TTMod_Blank        $TTMod_Reset]}
+#SUBSTITUTE {It is in atrocious condition.}   {Condition: [$TTMod_Condition_1  $TTMod_Blank         $TTMod_Reset]}
+#SUBSTITUTE {It is a complete wreck.}         {Condition: [$TTMod_Condition_0 $TTMod_Blank          $TTMod_Reset]}
+
