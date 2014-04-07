@@ -12,17 +12,17 @@
 
 #VARIABLE {TTMod_Reset}       {<088>}
 #VARIABLE {TTMod_Blank}       {<AAA><abc>}
-#VARIABLE {TTMod_Condition_A} {<AFA><afa>}
-#VARIABLE {TTMod_Condition_9} {<BFA><bfa>}
-#VARIABLE {TTMod_Condition_8} {<CFA><cfa>}
-#VARIABLE {TTMod_Condition_7} {<DFA><dfa>}
-#VARIABLE {TTMod_Condition_6} {<EFA><efa>}
-#VARIABLE {TTMod_Condition_5} {<FFA><ffa>}
-#VARIABLE {TTMod_Condition_4} {<FEA><fea>}
-#VARIABLE {TTMod_Condition_3} {<FDA><fda>}
-#VARIABLE {TTMod_Condition_2} {<FCA><fca>}
-#VARIABLE {TTMod_Condition_1} {<FBA><fba>}
 #VARIABLE {TTMod_Condition_0} {<FAA><faa>}
+#VARIABLE {TTMod_Condition_1} {<FBA><fba>}
+#VARIABLE {TTMod_Condition_2} {<FCA><fca>}
+#VARIABLE {TTMod_Condition_3} {<FDA><fda>}
+#VARIABLE {TTMod_Condition_4} {<FEA><fea>}
+#VARIABLE {TTMod_Condition_5} {<FFA><ffa>}
+#VARIABLE {TTMod_Condition_6} {<EFA><efa>}
+#VARIABLE {TTMod_Condition_7} {<DFA><dfa>}
+#VARIABLE {TTMod_Condition_8} {<CFA><cfa>}
+#VARIABLE {TTMod_Condition_9} {<BFA><bfa>}
+#VARIABLE {TTMod_Condition_A} {<AFA><afa>}
 #NOP =============================================
 
 
