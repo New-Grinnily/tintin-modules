@@ -1,22 +1,24 @@
 #SUBSTITUTE
   {^%1 radiates a reassuring cyan glow like the sun after rain.}
-  {<cfb>%1 has been consecrated to the service of Pishe.<088>}
+  {<cfb>%1 has been consecrated to the service of Pishe, Goddess of Slight Showers.<088>}
 #SUBSTITUTE
   {^%1 gently radiates a fuzzy white glow.}
-  {<cfb>%1 has been consecrated to the service of Gufnork.<088>}
+  {<cfb>%1 has been consecrated to the service of Gufnorki, God of Fluff.<088>}
 #SUBSTITUTE
   {^%1 stylishly radiates a pristine %2 light.}
-  {<cfb>%1 has been consecrated to the service of Gapp.<088>}
+  {<cfb>%1 has been consecrated to the service of Gapp, God of Fine Clothing.<088>}
 #SUBSTITUTE
   {^%1 indifferently radiates a harsh grey light.}
-  {<cfb>%1 has been consecrated to the service of Sandelfon.<088>}
+  {<cfb>%1 has been consecrated to the service of Sandelfon, God of Corridors.<088>}
 #SUBSTITUTE
   {^%1 slowly pulsates, washing from a deep blue to a light aquamarine.}
-  {<cfb>%1 has been consecrated to the service of Fish.<088>}
+  {<cfb>%1 has been consecrated to the service of Fish, God of Sea Creatures.<088>}
 #SUBSTITUTE
   {^%1 sheds an irritating orange glow that makes you feel that someone is creeping up on you.}
-  {<cfb>%1 has been consecrated to the service of Hat.<088>}
+  {<cfb>%1 has been consecrated to the service of Hat, Vulture-Headed God of Unexpected Guests.<088>}
 #SUBSTITUTE
   {^%1 beats regularly with blood-red pulses of light.}
-  {<cfb>%1 has been consecrated to the service of Sek.<088>}
-
+  {<cfb>%1 has been consecrated to the service of Seven-Handed Sek.<088>}
+#SUBSTITUTE
+  {^%1  glows softly with a flickering, uncertain light.}
+  {<cfb>%1 has been consecrated to the service of Shoji, the Goddess of Pencil Pushers.<088>}

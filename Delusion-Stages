@@ -12,13 +12,13 @@
 #NOP =============================================
 #NOP PART 1: VARIABLES:
 #NOP 
-#VARIABLE {TTMod_Reset} {<088>}
-#VARIABLE {TTMod_Blank} {<abc><AAA>}
-#VARIABLE {TTMod_Current} {<FBA><fba>}
-#VARIABLE {TTMod_Delude_2} {<AFA><afa>}
-#VARIABLE {TTMod_Delude_3} {<BFA><bfa>}
-#VARIABLE {TTMod_Delude_4} {<CFA><cfa>}
-#VARIABLE {TTMod_Delude_5} {<DFA><dfa>}
+#VARIABLE {TTMod_Reset}       {<088>}
+#VARIABLE {TTMod_Blank}       {<AAA><abc>}
+#VARIABLE {TTMod_Current}     {<FBA><fba>}
+#VARIABLE {TTMod_Delude_2}    {<AFA><afa>}
+#VARIABLE {TTMod_Delude_3}    {<BFA><bfa>}
+#VARIABLE {TTMod_Delude_4}    {<CFA><cfa>}
+#VARIABLE {TTMod_Delude_5}    {<DFA><dfa>}
 #VARIABLE {TTMod_Delude_Done} {<FFA><ffa>}
 #NOP =============================================
 
@@ -26,45 +26,45 @@
 #NOP =============================================
 #NOP PART 2: CASTERS:
 
-#NOP  $TTMod_Current indicates current delusion stage.
+#NOP  ${TTMod_Current} indicates current delusion stage.
 
-#NOP  $TTMod_Delude_2 $TTMod_Delude_4 reflect the stage to which the item has been deluded.
+#NOP  ${TTMod_Delude_2} to ${TTMod_Delude_4} reflect the stage to which the item has been deluded.
 
-#NOP  $TTMod_Delude_5 the item has been deluded to its last stage (haze), and will now
+#NOP  ${TTMod_Delude_5} the item has been deluded to its last stage (haze), and will now
 #NOP    require continued pampering until it "turns".
 
-#NOP  $TTMod_Delude_Done indicates item has been completely deluded and has "turned"
+#NOP  ${TTMod_Delude_Done} indicates item has been completely deluded and has "turned"
 #NOP    into a magical talisman.
 #NOP =============================================
 
 #NOP 1
 #SUBSTITUTE
   {It has a faint octarine shadow about it that disappears if you look at it squarely.}
-  {  Talisman:  [$TTMod_Current $TTMod_Blank         $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Current}  ${TTMod_Blank}                   ${TTMod_Reset}]  1: faint shadow}
 
 #NOP 2
 #SUBSTITUTE
   {It has a faint octarine shadow about it.}
-  {  Talisman:  [$TTMod_Delude_2 $TTMod_Current $TTMod_Blank   $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Delude_2}  ${TTMod_Current}  ${TTMod_Blank}      ${TTMod_Reset}]  2: faint shadow}
 
 #NOP 3
 #SUBSTITUTE
   {It has an octarine shadow about it that flickers occasionally out of the corner of your eye.}
-  {  Talisman:  [$TTMod_Delude_3  $TTMod_Current $TTMod_Blank  $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Delude_3}    ${TTMod_Current}  ${TTMod_Blank}    ${TTMod_Reset}]  3: shadow}
 
 #NOP 4
 #SUBSTITUTE
   {It has a flickering octarine shadow about it.}
-  {  Talisman:  [$TTMod_Delude_4   $TTMod_Current $TTMod_Blank $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Delude_4}      ${TTMod_Current}  ${TTMod_Blank}  ${TTMod_Reset}]  4: flickering shadow}
 
 #NOP 5
 #SUBSTITUTE
   {It has a flickering octarine haze about it.}
-  {  Talisman:  [$TTMod_Delude_5    $TTMod_Current $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Delude_5}        ${TTMod_Current}  ${TTMod_Reset}]  5: flickering haze}
 
 #NOP Done
 #SUBSTITUTE
   {It has the hazy octarine sparkle of a magical talisman.}
-  {  Talisman:  [$TTMod_Delude_Done     $TTMod_Reset]}
+  {  Talisman:  [${TTMod_Delude_Done}          ${TTMod_Reset}]}
 
 
