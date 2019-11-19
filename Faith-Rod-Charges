@@ -238,7 +238,7 @@
     {^The %1 {is|are} imbued with the ritual %2 and {is|are} linked to the %3.$}
     {  @Rod_PartPath{{%3} {%1}}  @Rod_RitualBar{{%2}} ${Rod_Bar.0-}}
   #SUBSTITUTE
-    {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
+    {^The %1 {is|are} imbued with the ritual %2 and {is|are} not dependent on any other part of %3.$}
     {  @Rod_PartPath{{%1}}  @Rod_RitualBar{{%2}} ${Rod_Bar.0-}}
 
   #NOP IMPRESSED
@@ -246,7 +246,7 @@
     {^The %1 {is|are} impressed with the ritual %2 and {is|are} linked to the %3.$}
     {  @Rod_PartPath{{%3} {%1}}  @Rod_RitualBar{{%2}} ${Rod_Bar.7-}}
   #SUBSTITUTE
-    {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of the %3.$}
+    {^The %1 {is|are} impressed with the ritual %2 and {is|are} not dependent on any other part of %3.$}
     {  @Rod_PartPath{{%1}}  @Rod_RitualBar{{%2}} ${Rod_Bar.7-}}
 
   #NOP IMPRINTED
