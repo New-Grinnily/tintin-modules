@@ -53,6 +53,10 @@ For everyone
           This module aims to make their antics a bit less intrusive by dimming them.
 
 CONSIDERATIONS:
+--------------
+
+   - The latest version of tintin++ won't work well with some of these modules. I may or may not rewrite the affected modules once development of the client becomes reasonably reliable, but I don't really have the kind of time for it at the moment.  I recommend using a version no later than 2.01.4.
+
    - If the current terminal width is too small, the progress bars will not appear at all. Depending on the module, you may need a terminal width in excess of 160 columns.
 
 If you should find any bugs, or if you have any doubts or ideas regarding any of my modules, please feel free to contact me in the game.
