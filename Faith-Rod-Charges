@@ -20,39 +20,43 @@
   #NOP
   #NOP PART 1: VARIABLES & FUNCTIONS:
 
-  #VARIABLE {TTMod_Reset} {<088>}
-  #VARIABLE {TTMod_Blank} {<abc><AAA>}
-  #VARIABLE {TTMod_Current} {<098><FBA>}
-  #VARIABLE {Rod_Part} {<088><fdc>}
-  #VARIABLE {Rod_Ritual} {<088><adf>}
-  #VARIABLE {Rod_Imbued} {<FFA>}
-  #VARIABLE {Rod_Impressed} {<AFA>}
-  #VARIABLE {Rod_Imprinted} {<ADF>}
+  #VARIABLE {Rod_Rst} {<088>}
+  #VARIABLE {Rod_Bnk} {<abc><AAA>}
+  #VARIABLE {Rod_Cur} {<098><FBA>}
+  #VARIABLE {Rod_Prt} {<088><fdc>}
+  #VARIABLE {Rod_Rit} {<088><adf>}
+  #VARIABLE {Rod_Imb} {<FFA>}
+  #VARIABLE {Rod_Ips} {<AFA>}
+  #VARIABLE {Rod_Ipt} {<ADF>}
 
-  #VARIABLE {Rod_Bar.00} {[${TTMod_Blank}       |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.01} {[${TTMod_Blank}${TTMod_Current}1${TTMod_Blank}      |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.02} {[${TTMod_Blank}${Rod_Imbued} ${TTMod_Current}2${TTMod_Blank}     |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.03} {[${TTMod_Blank}${Rod_Imbued}  ${TTMod_Current}3${TTMod_Blank}    |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.04} {[${TTMod_Blank}${Rod_Imbued}   ${TTMod_Current}4${TTMod_Blank}   |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.05} {[${TTMod_Blank}${Rod_Imbued}    ${TTMod_Current}5${TTMod_Blank}  |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.06} {[${TTMod_Blank}${Rod_Imbued}     ${TTMod_Current}6${TTMod_Blank} |       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.07} {[${TTMod_Blank}${Rod_Imbued}      ${TTMod_Current}7${TTMod_Blank}|       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.71} {[${TTMod_Blank}${Rod_Impressed}       |${TTMod_Current}1${TTMod_Blank}      ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.72} {[${TTMod_Blank}${Rod_Impressed}       | ${TTMod_Current}2${TTMod_Blank}     ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.73} {[${TTMod_Blank}${Rod_Impressed}       |  ${TTMod_Current}3${TTMod_Blank}    ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.74} {[${TTMod_Blank}${Rod_Impressed}       |   ${TTMod_Current}4${TTMod_Blank}   ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.75} {[${TTMod_Blank}${Rod_Impressed}       |    ${TTMod_Current}5${TTMod_Blank}  ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.76} {[${TTMod_Blank}${Rod_Impressed}       |     ${TTMod_Current}6${TTMod_Blank} ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.77} {[${TTMod_Blank}${Rod_Impressed}       |      ${TTMod_Current}7${TTMod_Blank}${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.99} {[${TTMod_Blank}${Rod_Imprinted}               ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.0-} {[${TTMod_Blank}${TTMod_Current}       ${TTMod_Blank}|       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.7-} {[${TTMod_Blank}${Rod_Imbued}       |${TTMod_Current}       ${TTMod_Reset}]}
-  #VARIABLE {Rod_Bar.9-} {[${TTMod_Blank}${Rod_Imprinted}       |       ${TTMod_Reset}]}
+  #VARIABLE {Rod_Bar.00} {[${Rod_Bnk}       |       ${Rod_Rst}]}
+
+  #VARIABLE {Rod_Bar.01} {[${Rod_Bnk}${Rod_Imb}${Rod_Cur}1${Rod_Bnk}      |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.02} {[${Rod_Bnk}${Rod_Imb} ${Rod_Cur}2${Rod_Bnk}     |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.03} {[${Rod_Bnk}${Rod_Imb}  ${Rod_Cur}3${Rod_Bnk}    |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.04} {[${Rod_Bnk}${Rod_Imb}   ${Rod_Cur}4${Rod_Bnk}   |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.05} {[${Rod_Bnk}${Rod_Imb}    ${Rod_Cur}5${Rod_Bnk}  |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.06} {[${Rod_Bnk}${Rod_Imb}     ${Rod_Cur}6${Rod_Bnk} |       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.07} {[${Rod_Bnk}${Rod_Imb}      ${Rod_Cur}7${Rod_Bnk}|       ${Rod_Rst}]}
+
+  #VARIABLE {Rod_Bar.71} {[${Rod_Bnk}${Rod_Ips}       |${Rod_Cur}1${Rod_Bnk}      ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.72} {[${Rod_Bnk}${Rod_Ips}       | ${Rod_Cur}2${Rod_Bnk}     ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.73} {[${Rod_Bnk}${Rod_Ips}       |  ${Rod_Cur}3${Rod_Bnk}    ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.74} {[${Rod_Bnk}${Rod_Ips}       |   ${Rod_Cur}4${Rod_Bnk}   ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.75} {[${Rod_Bnk}${Rod_Ips}       |    ${Rod_Cur}5${Rod_Bnk}  ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.76} {[${Rod_Bnk}${Rod_Ips}       |     ${Rod_Cur}6${Rod_Bnk} ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.77} {[${Rod_Bnk}${Rod_Ips}       |      ${Rod_Cur}7${Rod_Bnk}${Rod_Rst}]}
+
+  #VARIABLE {Rod_Bar.99} {[${Rod_Bnk}${Rod_Ipt}       |       ${Rod_Cur}${Rod_Bnk}${Rod_Rst}]}
+
+  #VARIABLE {Rod_Bar.0-} {[${Rod_Bnk}${Rod_Imb}${Rod_Cur}       ${Rod_Bnk}|       ${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.7-} {[${Rod_Bnk}${Rod_Ips}       |${Rod_Cur}       ${Rod_Bnk}${Rod_Rst}]}
+  #VARIABLE {Rod_Bar.9-} {[${Rod_Bnk}${Rod_Ipt}       |       ${Rod_Cur}${Rod_Bnk}${Rod_Rst}]}
 
   #FUNCTION {Rod_PartPath} {
     #IF {"%2"==""}
-      { #VARIABLE {tmp} {${Rod_Part}%1${TTMod_Reset}}    }
-      { #VARIABLE {tmp} {%1/${Rod_Part}%2${TTMod_Reset}} }
+      { #VARIABLE {tmp} {${Rod_Prt}%1${Rod_Rst}}    }
+      { #VARIABLE {tmp} {%1/${Rod_Prt}%2${Rod_Rst}} }
     #IF {"%2"!="" && "%1"=="feathers" && "%2"=="hook"}  { #VARIABLE {tmp} {shaft/${tmp}} } {#NOP}
     #IF {"%2"!="" && "%1"=="chains" && "%2"=="balls"}   { #VARIABLE {tmp} {shaft/${tmp}} } {#NOP}
     #IF {"%2"!="" && "%1"=="emblem" && "%2"=="tassels"} { #VARIABLE {tmp} {shaft/${tmp}} } {#NOP}
@@ -66,7 +70,7 @@
   }
 
   #FUNCTION {Rod_RitualBar} {
-    #FORMAT {tmp} {%s %-21s %s} {[${Rod_Ritual}} {%1} {${TTMod_Reset}]};
+    #FORMAT {tmp} {%s %-21s %s} {[${Rod_Rit}} {%1} {${Rod_Rst}]};
     #RETURN $tmp
   }
 
@@ -74,15 +78,15 @@
   #NOP
   #NOP PART 2: PRIESTS:
   #NOP
-  #NOP  ${TTMod_Current} indicates current charge level.
+  #NOP  ${Rod_Cur} indicates current charge level.
   #NOP
-  #NOP  ${Rod_Imbued} indicates rod is so far up to imbued level.
+  #NOP  ${Rod_Imb} indicates rod is so far up to imbued level.
   #NOP    The ritual can be used once, but it will be lost.
   #NOP
-  #NOP  ${Rod_Impressed} indicates rod is so far up to impressed level.
+  #NOP  ${Rod_Ips} indicates rod is so far up to impressed level.
   #NOP    The ritual can be used many times, so long as the rod is not reconsecrated.
   #NOP
-  #NOP  ${Rod_Imprinted} indicates rod has been fully imprinted.
+  #NOP  ${Rod_Ipt} indicates rod has been fully imprinted.
   #NOP    The ritual can be used many times, and would survive reconsecration.
 
   #NOP EMPTY
@@ -152,7 +156,7 @@
   #NOP IMPRESSED!
   #HIGHLIGHT
     {^The %1 trembles momentarily as its bond with the ritual %2 is strengthened.}
-    {${Rod_Impressed}}
+    {${Rod_Ips}}
 
   #NOP IMPRESSED 1
   #SUBSTITUTE
@@ -213,7 +217,7 @@
   #NOP IMPRINTED
   #HIGHLIGHT
     {^The %1 throbs with power as its bond with the ritual %2 is fastened tight.}
-    {${Rod_Imprinted}}
+    {${Rod_Ipt}}
   #SUBSTITUTE
     {^The %1 {is|are} imprinted with the ritual %2 and {is|are} linked to the %3.}
     {  @Rod_PartPath{{%3} {%1}}  @Rod_RitualBar{{%2}} ${Rod_Bar.99}}
@@ -227,11 +231,11 @@
   #NOP
   #NOP PART 3: NON-PRIESTS
   #NOP
-  #NOP  ${TTMod_Current} indicates rod is being imbued or impressed.
+  #NOP  ${Rod_Cur} indicates rod is being imbued or impressed.
   #NOP
-  #NOP  ${Rod_Impressed} means rod has been imbued completely, but is not yet imprinted.
+  #NOP  ${Rod_Ips} means rod has been imbued completely, but is not yet imprinted.
   #NOP
-  #NOP  ${Rod_Imprinted} mean rod has been fully imprinted.
+  #NOP  ${Rod_Ipt} mean rod has been fully imprinted.
 
   #NOP IMBUED
   #SUBSTITUTE
