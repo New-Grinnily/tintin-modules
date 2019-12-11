@@ -65,7 +65,7 @@
     #IF {"%2"!="" && "%1"=="spikes" && "%2"=="emblem"}  { #VARIABLE {tmp} {shaft/${tmp}} } {#NOP}
     #IF {"%2"!="" && "%1"=="tape" && "%2"=="orb"}       { #VARIABLE {tmp} {shaft/${tmp}} } {#NOP}
 
-    #FORMAT {tmp} {%-21s} $tmp;
+    #FORMAT {tmp} {%-30s} $tmp;
     #RETURN $tmp
   }
 
